@@ -68,7 +68,7 @@ Temporary Items
 # Recommended template: Node.gitignore
 
 node_modules/
-dist/
+#dist/
 
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,macos,linux,sass,vue,vuejs
 

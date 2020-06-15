@@ -22,7 +22,8 @@ yarn install vue-gridjs || npm install vue-gridjs
 ```js
 /* in `main.js` or wherever you specify your global components */
 import Grid from 'vue-gridjs'
-Vue.component('grid', Grid)
+
+Vue.use(Grid)
 ```
 
 ### Local Registration
@@ -70,17 +71,18 @@ export default {
   },
   data() {
     return {
-      auto-width: true/false,             // boolean
+      auto-width: true/false,             // boolean to automatically set table width
       data: {                             // object containing arrays columns & rows
         cols: ['column 1', 'column 2'],
         rows: ['row 1: col 1', 'row 1: col 2']
       },
       from: '.my-element',                // string of HTML table selector
-      language: {}                        // dictionary object
-      pagination: true/false || {}        // boolean pagination settings object
-      search: true/false || {}            // boolean or search settings object
-      server: {}                          // server settings object
-      sort: true/false || {}              // boolean sort settings object
+      language: {},                       // localization dictionary object
+      pagination: true/false || {},       // boolean or pagination settings object
+      search: true/false || {},           // boolean or search settings object
+      server: {},                         // server settings object
+      sort: true/false || {},             // boolean or sort settings object
+      theme: 'mermaid',                   // string with name of theme
       width: '100%'                       // string with css width value
     }
   }
@@ -94,7 +96,7 @@ export default {
 
 - Website: https://self.agency
 - Twitter: [@selfagency_llc](https://twitter.com/selfagency_llc)
-- Github: [@selfagency](https://github.com/selfagency)
+- Gitlab: [@selfagency](https://gitlab.com/selfagency)
 - LinkedIn: [@selfagency](https://linkedin.com/in/selfagency)
 
 ## 🤝 Contributing
