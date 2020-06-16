@@ -1,9 +1,7 @@
 module.exports = {
   jsCompiler: 'babel',
-  banner: true,
   input: 'src/index.js',
   output: {
-    fileName: 'vue-gridjs.js',
     format: ['cjs', 'esm', 'umd'],
     extractCSS: false,
     bundleNodeModules: true,
