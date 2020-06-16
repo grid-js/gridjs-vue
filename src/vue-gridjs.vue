@@ -4,7 +4,7 @@
 
 <script>
 import { Grid } from 'gridjs'
-import { v4 as uuid } from 'uuid'
+import uuid from 'uuid-random'
 import elementReady from 'element-ready'
 
 export default {
@@ -29,13 +29,22 @@ export default {
       type: Object,
       default: undefined
     },
-    pagination: [Object, Boolean],
-    search: [Object, Boolean],
+    pagination: {
+      type: [Object, Boolean],
+      default: false
+    },
+    search: {
+      type: [Object, Boolean],
+      default: false
+    },
     server: {
       type: Object,
       default: undefined
     },
-    sort: [Object, Boolean],
+    sort: {
+      type: [Object, Boolean],
+      default: false
+    },
     theme: {
       type: String,
       default: 'mermaid'

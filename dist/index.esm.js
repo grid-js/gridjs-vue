@@ -2,21 +2,15 @@
  * vue-gridjs v0.1.0
  * (c) 
  */
-'use strict';
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
-function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
-
-require('core-js/modules/es.object.to-string');
-require('core-js/modules/es.promise');
-require('core-js/modules/es.regexp.exec');
-require('core-js/modules/es.string.search');
-var gridjs = require('gridjs');
-var uuid = _interopDefault(require('uuid-random'));
-var elementReady = _interopDefault(require('element-ready'));
-var __vue_normalize__ = _interopDefault(require('vue-runtime-helpers/dist/normalize-component.mjs'));
-var __vue_create_injector__ = _interopDefault(require('vue-runtime-helpers/dist/inject-style/browser.mjs'));
+import 'core-js/modules/es.object.to-string';
+import 'core-js/modules/es.promise';
+import 'core-js/modules/es.regexp.exec';
+import 'core-js/modules/es.string.search';
+import { Grid } from 'gridjs';
+import uuid from 'uuid-random';
+import elementReady from 'element-ready';
+import __vue_normalize__ from 'vue-runtime-helpers/dist/normalize-component.mjs';
+import __vue_create_injector__ from 'vue-runtime-helpers/dist/inject-style/browser.mjs';
 
 function _await(value, then, direct) {
   if (direct) {
@@ -96,7 +90,7 @@ var script = {
         _this2.wrapper = _elementReady;
 
         if (_this2.data && _this2.data.rows || _this2.server || _this2.from) {
-          _this2.grid = new gridjs.Grid({
+          _this2.grid = new Grid({
             autoWidth: false,
             columns: _this2.data.cols,
             data: _this2.data.rows,
@@ -189,5 +183,5 @@ if (GlobalVue) {
   GlobalVue.use(plugin);
 }
 
-exports.default = __vue_component__;
-exports.install = install;
+export default __vue_component__;
+export { install };

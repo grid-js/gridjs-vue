@@ -1,8 +1,14 @@
 module.exports = {
-  // jsCompiler: 'babel',
+  jsCompiler: 'babel',
   banner: true,
+  input: 'src/index.js',
   output: {
-    extractCSS: false
+    fileName: 'vue-gridjs.js',
+    format: ['cjs', 'esm', 'umd'],
+    extractCSS: false,
+    bundleNodeModules: true,
+    minify: true,
+    moduleName: 'Grid'
   },
   plugins: {
     vue: {
@@ -11,7 +17,10 @@ module.exports = {
     scss: true,
     babel: {
       presets: ['vue', ['@babel/preset-env', { useBuiltIns: 'usage', corejs: 3 }]],
-      runtimeHelpers: true
-    }
+      runtimeHelpers: true,
+      exclude: 'node_modules/**',
+      configFile: false
+    },
+    'node-resolve': true
   }
 }
