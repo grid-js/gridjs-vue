@@ -10,7 +10,8 @@ module.exports = {
   },
   plugins: {
     vue: {
-      css: true
+      css: true,
+      runtimeHelpers: true
     },
     scss: true,
     babel: {
