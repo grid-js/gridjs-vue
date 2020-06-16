@@ -49,7 +49,7 @@ Refer to [Grid.js documentation](https://gridjs.io/docs/config/) for specific co
 ```vue
 <template>
   <grid
-    :auto-width="autowidth"
+    :auto-width="autoWidth"
     :data="data"
     :from="from"
     :language="language"
@@ -118,7 +118,6 @@ export default {
 - Website: https://self.agency
 - Twitter: [@selfagency_llc](https://twitter.com/selfagency_llc)
 - Gitlab: [@selfagency](https://gitlab.com/selfagency)
-- LinkedIn: [@selfagency](https://linkedin.com/in/selfagency)
 
 ## 🤝 Contributing
 

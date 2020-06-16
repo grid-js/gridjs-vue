@@ -92,6 +92,6 @@ export default {
 
 <style lang="scss" scoped>
 .mermaid {
-  @import '~gridjs/dist/theme/mermaid.css';
+  @import '../node_modules/gridjs/dist/theme/mermaid.css';
 }
 </style>
