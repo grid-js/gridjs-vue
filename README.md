@@ -59,7 +59,7 @@ Refer to [Grid.js documentation](https://gridjs.io/docs/config/) for specific co
 </template>
 
 <script>
-import Grid from 'vue-gridjs'
+import Grid from 'gridjs-vue'
 
 export default {
   name: 'MyTable',
@@ -70,7 +70,7 @@ export default {
     return {
       autoWidth: true / false, // boolean to automatically set table width
       data: {
-        // object containing arrays columns & rows
+        // object containing arrays of columns & rows
         cols: ['column 1', 'column 2'],
         rows: ['row 1: col 1', 'row 1: col 2']
       },

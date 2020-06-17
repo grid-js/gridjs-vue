@@ -1,41 +1,41 @@
 {
-  "vue-gridjs/autoWidth": {
+  "gridjs-vue/autoWidth": {
     "type": "boolean",
     "description": "Boolean to automatically set table width. Default: true"
   },
-  "vue-gridjs/from": {
+  "gridjs-vue/from": {
     "type": "string",
     "description": "String of HTML table selector. Default: undefined"
   },
-  "vue-gridjs/data": {
+  "gridjs-vue/data": {
     "type": "object",
     "description": "Object containing arrays of columns [cols] & rows [rows]. Default: { cols: [''], rows: [''] }"
   },
-  "vue-gridjs/language": {
+  "gridjs-vue/language": {
     "type": "object",
     "description": "Localization dictionary object. Default: undefined"
   },
-  "vue-gridjs/pagination": {
+  "gridjs-vue/pagination": {
     "type": ["boolean", "object"],
     "description": "Boolean or pagination settings object. Default: true"
   },
-  "vue-gridjs/search": {
+  "gridjs-vue/search": {
     "type": ["boolean", "object"],
     "description": "Boolean or search settings object. Default: false"
   },
-  "vue-gridjs/server": {
+  "gridjs-vue/server": {
     "type": "object",
     "description": "Server settings object. Default: undefined"
   },
-  "vue-gridjs/sort": {
+  "gridjs-vue/sort": {
     "type": ["boolean", "object"],
     "description": "Boolean or sort settings object. Default: false"
   },
-  "vue-gridjs/theme": {
+  "gridjs-vue/theme": {
     "type": "string",
     "description": "String with name of theme. Default: 'mermaid'"
   },
-  "vue-gridjs/width": {
+  "gridjs-vue/width": {
     "type": "string",
     "description": "String with CSS width value. Default: undefined"
   }

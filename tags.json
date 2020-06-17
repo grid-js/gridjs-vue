@@ -1,5 +1,5 @@
 {
-  "vue-gridjs": {
+  "gridjs-vue": {
     "attributes": ["autoWidth", "from", "data", "language", "pagination", "search", "server", "sort", "theme", "width"],
     "description": "A Vue.js wrapper for Grid.js"
   }
