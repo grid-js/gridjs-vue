@@ -1,5 +1,7 @@
 <template>
-  <article :data-uuid="uuid" :class="`gridjs__wrapper ${theme}`"></article>
+  <!-- TODO: Figure out a way to scope CSS to the component rather than the global scope -->
+  <!-- TODO: Implement full Grid.js API -->
+  <article :data-uuid="uuid" :class="`gridjs__wrapper`"></article>
 </template>
 
 <script>
@@ -90,8 +92,6 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-.mermaid {
-  @import '../node_modules/gridjs/dist/theme/mermaid.css';
-}
+<style scoped>
+@import '~gridjs/dist/theme/mermaid.css';
 </style>

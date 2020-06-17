@@ -1,18 +1,15 @@
-# Welcome to vue-gridjs 👋
+# gridjs-vue
 
-![Version](https://img.shields.io/badge/version-0.1.0-blue.svg?cacheSeconds=2592000)
-[![Documentation](https://img.shields.io/badge/documentation-yes-brightgreen.svg)](https://gitlab.com/selfagency/vue-gridjs)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](#)
-[![Twitter: selfagency_llc](https://img.shields.io/twitter/follow/selfagency_llc.svg?style=social)](https://twitter.com/selfagency_llc)
+![gridjs-vue](https://user-images.githubusercontent.com/2541728/84843482-ffc31c00-b015-11ea-95e8-dc6fb3931ad5.png)
 
 A [Vue.js](https://vuejs.org) wrapper component for [Grid.js](https://grid.io)
 
-### 🏠 [Homepage](https://gitlab.com/selfagency/vue-gridjs)
+### 🏠 [Homepage](https://gridjs.io)
 
 ## Install
 
 ```sh
-yarn install vue-gridjs || npm install vue-gridjs
+yarn install gridjs-vue || npm install gridjs-vue
 ```
 
 ## Component Registration
@@ -21,7 +18,7 @@ yarn install vue-gridjs || npm install vue-gridjs
 
 ```js
 /* in `main.js` or wherever you specify your global components */
-import Grid from 'vue-gridjs'
+import Grid from 'gridjs-vue'
 
 Vue.use(Grid)
 ```
@@ -30,7 +27,7 @@ Vue.use(Grid)
 
 ```vue
 <script>
-import Grid from 'vue-gridjs'
+import Grid from 'gridjs-vue'
 
 export default {
   components: {
@@ -111,24 +108,20 @@ export default {
 }
 ```
 
-## Author
+## Known Issues
 
-👤 **Daniel Sieradski <hello@self.agency>**
-
-- Website: https://self.agency
-- Twitter: [@selfagency_llc](https://twitter.com/selfagency_llc)
-- Gitlab: [@selfagency](https://gitlab.com/selfagency)
+- The full API for updating the component's data has not yet been implemented.
+- The module currently loads CSS in the global scope. A future release will ensure that CSS is scoped solely to the component itself.
+- Presently, the `mermaid.css` stylesheet, is the only available theme for Grid.js.
 
 ## 🤝 Contributing
 
+Originally authored by [Daniel Sieradski](https://twitter.com/self_agency).
+
 Contributions, issues and feature requests are welcome!
 
-Feel free to check [issues page](https://gitlab.com/selfagency/vue-gridjs/issues).
+Feel free to check [issues page](https://github.com/gridjs/gridjs-vue/issues).
 
 ## Show your support
 
 Give a ⭐️ if this project helped you!
-
----
-
-_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_

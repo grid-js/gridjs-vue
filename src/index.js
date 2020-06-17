@@ -1,4 +1,4 @@
-import component from './vue-gridjs.vue'
+import component from './gridjs-vue.vue'
 
 export function install(Vue) {
   if (install.installed) return
