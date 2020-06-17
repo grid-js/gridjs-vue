@@ -47,10 +47,11 @@ Refer to [Grid.js documentation](https://gridjs.io/docs/config/) for specific co
 <template>
   <grid
     :auto-width="autoWidth"
-    :data="data"
+    :columns="cols"
     :from="from"
     :language="language"
     :pagination="pagination"
+    :rows="rows"
     :search="search"
     :server="server"
     :sort="sort"
@@ -69,14 +70,11 @@ export default {
   data() {
     return {
       autoWidth: true / false, // boolean to automatically set table width
-      data: {
-        // object containing arrays of columns & rows
-        cols: ['column 1', 'column 2'],
-        rows: ['row 1: col 1', 'row 1: col 2']
-      },
+      cols: ['column 1', 'column 2'], // array containing strings of column headers
       from: '.my-element', // string of HTML table selector
       language: {}, // localization dictionary object
       pagination: true / false || {}, // boolean or pagination settings object
+      rows: ['row 1: col 1', 'row 1: col 2'] // array containing row data
       search: true / false || {}, // boolean or search settings object
       server: {}, // server settings object
       sort: true / false || {}, // boolean or sort settings object
@@ -93,13 +91,11 @@ export default {
 ```json
 {
   "autoWidth": true,
-  "data": {
-    "cols": [""],
-    "rows": [""]
-  },
+  "cols": [""],
   "from": undefined,
   "language": undefined,
   "pagination": false,
+  "rows": undefined,
   "search": false,
   "server": undefined,
   "sort": false,
@@ -107,12 +103,6 @@ export default {
   "width": "100%"
 }
 ```
-
-## Known Issues
-
-- The full API for updating the component's data has not yet been implemented.
-- The module currently loads CSS in the global scope. A future release will ensure that CSS is scoped solely to the component itself.
-- Presently, the `mermaid.css` stylesheet, is the only available theme for Grid.js.
 
 ## 🤝 Contributing
 

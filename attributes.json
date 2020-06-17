@@ -3,13 +3,13 @@
     "type": "boolean",
     "description": "Boolean to automatically set table width. Default: true"
   },
+  "gridjs-vue/cols": {
+    "type": "array",
+    "description": "Array containing strings of column headers. Default: undefined"
+  },
   "gridjs-vue/from": {
     "type": "string",
     "description": "String of HTML table selector. Default: undefined"
-  },
-  "gridjs-vue/data": {
-    "type": "object",
-    "description": "Object containing arrays of columns [cols] & rows [rows]. Default: { cols: [''], rows: [''] }"
   },
   "gridjs-vue/language": {
     "type": "object",
@@ -18,6 +18,10 @@
   "gridjs-vue/pagination": {
     "type": ["boolean", "object"],
     "description": "Boolean or pagination settings object. Default: true"
+  },
+  "gridjs-vue/rows": {
+    "type": "array",
+    "description": "Array containing row data. Default: undefined"
   },
   "gridjs-vue/search": {
     "type": ["boolean", "object"],

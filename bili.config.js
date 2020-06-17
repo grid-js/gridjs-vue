@@ -13,7 +13,6 @@ module.exports = {
       css: true,
       runtimeHelpers: true
     },
-    // scss: true,
     babel: {
       presets: ['vue', ['@babel/preset-env', { useBuiltIns: 'usage', corejs: 3 }]],
       runtimeHelpers: true,
