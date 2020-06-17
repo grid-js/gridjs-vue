@@ -47,7 +47,7 @@ Refer to [Grid.js documentation](https://gridjs.io/docs/config/) for specific co
 <template>
   <grid
     :auto-width="autoWidth"
-    :columns="cols"
+    :cols="cols"
     :from="from"
     :language="language"
     :pagination="pagination"
