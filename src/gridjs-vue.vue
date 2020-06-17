@@ -181,7 +181,7 @@ export default {
       }
     },
     update() {
-      this.grid.updateConfig(this.options)
+      this.grid.updateConfig(this.options).forceRender()
     }
   }
 }
