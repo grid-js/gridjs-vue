@@ -36,8 +36,8 @@
     "description": "Boolean or sort settings object. Default: false"
   },
   "gridjs-vue/theme": {
-    "type": "string",
-    "description": "String with name of theme. Default: 'mermaid'"
+    "type": ["string"],
+    "description": "String with name of theme or 'none' to disable. Default: 'mermaid'"
   },
   "gridjs-vue/width": {
     "type": "string",

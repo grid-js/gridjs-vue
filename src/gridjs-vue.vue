@@ -64,7 +64,6 @@ export default {
         }
       },
       grid: null,
-      styles: null,
       uuid: null,
       wrapper: null
     }
@@ -128,7 +127,7 @@ export default {
     this.wrapper = await elementReady(`[data-uuid="${this.uuid}"]`)
 
     // assign styles
-    this.assignStyles()
+    if (this.theme !== 'none') this.assignStyles()
 
     // instantiate grid.js
     if (this.wrapper && (this.options.data || this.options.from || this.options.server)) {

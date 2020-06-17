@@ -39,7 +39,7 @@ export default {
 
 ## Usage
 
-Pass either `data`, `from`, or `server` as a data source. Everything else is optional.
+Pass `cols` and either `rows`, `from`, or `server` as a data source. Everything else is optional.
 
 Refer to [Grid.js documentation](https://gridjs.io/docs/config/) for specific configuration options.
 
@@ -78,7 +78,7 @@ export default {
       search: true / false || {}, // boolean or search settings object
       server: {}, // server settings object
       sort: true / false || {}, // boolean or sort settings object
-      theme: 'mermaid', // string with name of theme
+      theme: 'mermaid', // string with name of theme or 'none' to disable
       width: '100%' // string with css width value
     }
   }
