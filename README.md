@@ -2,7 +2,7 @@
 
 ![gridjs-vue](https://user-images.githubusercontent.com/2541728/84843482-ffc31c00-b015-11ea-95e8-dc6fb3931ad5.png)
 
-A [Vue.js](https://vuejs.org) wrapper component for [Grid.js](https://grid.io)
+A [Vue.js](https://vuejs.org) wrapper component for [Grid.js](https://gridjs.io)
 
 ### 🏠 [Homepage](https://gridjs.io)
 
