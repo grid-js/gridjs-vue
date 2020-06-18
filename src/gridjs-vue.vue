@@ -141,7 +141,11 @@ export default {
   },
   methods: {
     assignStyles() {
-      this.styles = require(`gridjs/dist/theme/${this.theme}.css`)
+      const themes = ['mermaid']
+
+      if (themes.includes(this.theme)) {
+        this.styles = require(`../node_modules/gridjs/dist/theme/${this.theme}.css`)
+      }
 
       const styleSheets = document.styleSheets
       const id = `#gridjs__${this.uuid}`

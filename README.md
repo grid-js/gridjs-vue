@@ -110,7 +110,7 @@ Originally authored by [Daniel Sieradski](https://twitter.com/self_agency).
 
 Contributions, issues and feature requests are welcome!
 
-Feel free to check [issues page](https://github.com/gridjs/gridjs-vue/issues).
+Feel free to check [issues page](https://github.com/grid-js/gridjs-vue/issues).
 
 ## Show your support
 

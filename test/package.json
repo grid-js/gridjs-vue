@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "test-dev": "yarn pull; vue-cli-service serve",
+    "test-dev": "yarn build; yarn pull; vue-cli-service serve",
+    "build": "cd ..; yarn build; cd test",
     "pull": "yarn remove gridjs-vue; yarn add ../."
   },
   "dependencies": {
