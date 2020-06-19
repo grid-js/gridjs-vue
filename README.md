@@ -2,13 +2,7 @@
 
 <center><img src="https://user-images.githubusercontent.com/2541728/84843482-ffc31c00-b015-11ea-95e8-dc6fb3931ad5.png" alt="gridjs-vue logo" /></center>
 
-<<<<<<< HEAD
-A [Vue.js](https://vuejs.org) wrapper component for [Grid.js](https://gridjs.io)
-
-### 🏠 [Homepage](https://gridjs.io)
-=======
 A Vue wrapper component for [Grid.js](https://gridjs.io).
->>>>>>> e1c00e6... another attempt at importing cssing
 
 ## Install
 
