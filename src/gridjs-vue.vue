@@ -127,7 +127,7 @@ export default {
     this.wrapper = await elementReady(`[data-uuid="${this.uuid}"]`)
 
     // assign styles
-    if (this.theme !== 'none') this.assignStyles()
+    if (this.theme !== 'none') await this.assignStyles()
 
     // instantiate grid.js
     if (this.wrapper && (this.options.data || this.options.from || this.options.server)) {
@@ -140,11 +140,11 @@ export default {
     this.wrapper = undefined
   },
   methods: {
-    assignStyles() {
+    async assignStyles() {
       const themes = ['mermaid']
 
       if (themes.includes(this.theme)) {
-        this.styles = require(`../node_modules/gridjs/dist/theme/${this.theme}.css`)
+        await import(`gridjs/dist/theme/${this.theme}.css`)
       }
 
       const styleSheets = document.styleSheets
