@@ -3,14 +3,12 @@ module.exports = {
   input: 'src/index.js',
   output: {
     format: ['cjs', 'esm', 'umd'],
-    extractCSS: false,
     bundleNodeModules: true,
     minify: true,
     moduleName: 'Grid'
   },
   plugins: {
     vue: {
-      css: true,
       runtimeHelpers: true
     },
     babel: {

@@ -14,7 +14,8 @@
   "scripts": {
     "dev": "vue serve src/gridjs-vue.vue",
     "build": "bili src/index.js; yarn todo",
-    "todo": "leasot -x --reporter markdown 'src/**/*' > TODO.md"
+    "todo": "leasot -x --reporter markdown 'src/**/*' > TODO.md",
+    "install": "cd dist; ln -s ../node_modules/gridjs/dist/theme themes"
   },
   "files": [
     "dist/*",

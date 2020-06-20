@@ -144,7 +144,7 @@ export default {
       const themes = ['mermaid']
 
       if (themes.includes(this.theme)) {
-        await import(`gridjs/dist/theme/${this.theme}.css`)
+        await import(`./themes/${this.theme}.css`)
       }
 
       const styleSheets = document.styleSheets
