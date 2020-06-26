@@ -14,6 +14,10 @@ export default {
       type: Boolean,
       default: true
     },
+    classNames: {
+      type: Object,
+      default: undefined
+    },
     cols: {
       type: Array,
       default: undefined
@@ -45,6 +49,10 @@ export default {
     sort: {
       type: [Object, Boolean],
       default: false
+    },
+    styles: {
+      type: Object,
+      default: undefined
     },
     theme: {
       type: String,
@@ -79,10 +87,14 @@ export default {
         width: this.width
       }
 
+      // let classNames
+
+      if (this.classNames) options.className = this.classNames
       if (this.from) options.from = this.from
       if (this.language) options.language = this.language
       if (this.search) options.search = this.search
       if (this.server) options.server = this.server
+      if (this.styles) options.style = this.styles
 
       return options
     }
@@ -144,7 +156,7 @@ export default {
       const themes = ['mermaid']
 
       if (themes.includes(this.theme)) {
-        await import(`./themes/${this.theme}.css`)
+        console.log(await import(`raw-loader!gridjs/dist/theme/${this.theme}.css`))
       }
 
       const styleSheets = document.styleSheets
