@@ -15,7 +15,7 @@
     "dev": "rollup -c --watch",
     "build": "bili src/index.js; yarn todo",
     "todo": "leasot -x --reporter markdown 'src/**/*' > TODO.md",
-    "release": "eval envkey-source | source; release-it"
+    "release": "eval $(envkey-source) && release-it"
   },
   "files": [
     "dist/*",
