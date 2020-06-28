@@ -3,13 +3,17 @@
     "type": "boolean",
     "description": "Boolean to automatically set table width. Default: true"
   },
+  "gridjs-vue/classNames": {
+    "type": "object",
+    "description": "Object containing CSS class names. Default: undefined"
+  },
   "gridjs-vue/cols": {
     "type": "array",
     "description": "Array containing strings of column headers. Default: undefined"
   },
   "gridjs-vue/from": {
-    "type": "string",
-    "description": "String of HTML table selector. Default: undefined"
+    "type": ["string", "function"],
+    "description": "String of HTML table selector or function returning HTML table string. Default: undefined"
   },
   "gridjs-vue/language": {
     "type": "object",
@@ -20,23 +24,27 @@
     "description": "Boolean or pagination settings object. Default: true"
   },
   "gridjs-vue/rows": {
-    "type": "array",
-    "description": "Array containing row data. Default: undefined"
+    "type": ["array", "function"],
+    "description": "Array containing or function returning row data. Default: undefined"
   },
   "gridjs-vue/search": {
-    "type": ["boolean", "object"],
-    "description": "Boolean or search settings object. Default: false"
+    "type": "boolean",
+    "description": "Boolean activating search. Default: false"
   },
   "gridjs-vue/server": {
-    "type": "object",
-    "description": "Server settings object. Default: undefined"
+    "type": ["object", "function"],
+    "description": "Server settings object or function returning object. Default: undefined"
   },
   "gridjs-vue/sort": {
-    "type": ["boolean", "object"],
-    "description": "Boolean or sort settings object. Default: false"
+    "type": "boolean",
+    "description": "Boolean activating sort on all columns. Default: false"
+  },
+  "gridjs-vue/styles": {
+    "type": "object",
+    "description": "Object containing CSS style definitions. Default: undefined"
   },
   "gridjs-vue/theme": {
-    "type": ["string"],
+    "type": "string",
     "description": "String with name of theme or 'none' to disable. Default: 'mermaid'"
   },
   "gridjs-vue/width": {
