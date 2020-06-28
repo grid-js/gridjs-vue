@@ -970,6 +970,14 @@
   dependencies:
     "@types/node" ">= 8"
 
+"@release-it/keep-a-changelog@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@release-it/keep-a-changelog/-/keep-a-changelog-1.1.1.tgz#ea3dcc8d063d9f644eb84f82e06955fa2fa8a02c"
+  integrity sha512-qV8tsFenGeQDK8FkEufuNmwuCNjHmRC6JwXH/5PRtf+3oUYR3pxypMT3xuEff5jMA6Qtchy5ARWJFRxZvNoLrA==
+  dependencies:
+    detect-newline "^3.1.0"
+    release-it "^13.6.3"
+
 "@rollup/plugin-replace@^2.3.2":
   version "2.3.3"
   resolved "https://registry.yarnpkg.com/@rollup/plugin-replace/-/plugin-replace-2.3.3.tgz#cd6bae39444de119f5d905322b91ebd4078562e7"
@@ -2914,6 +2922,11 @@ detect-indent@^4.0.0:
   integrity sha1-920GQ1LN9Docts5hnE7jqUdd4gg=
   dependencies:
     repeating "^2.0.0"
+
+detect-newline@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/detect-newline/-/detect-newline-3.1.0.tgz#576f5dfc63ae1a192ff192d8ad3af6308991b651"
+  integrity sha512-TLz+x/vEXm/Y7P7wn1EJFNLxYpUD4TgMosxY6fAVJUnJMbupHBOncxyWUG9OpTaH9EBD7uFI5LfEgmMOc54DsA==
 
 detect-repo-changelog@1.0.1:
   version "1.0.1"

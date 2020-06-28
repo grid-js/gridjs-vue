@@ -28,7 +28,6 @@
 .nfs*
 .node_repl_history
 .npm
-.npmrc
 .nuxt
 .nyc_output
 .rpt2_cache/

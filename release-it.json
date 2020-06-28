@@ -1,0 +1,19 @@
+{
+  "git": {
+    "commitMessage": "🚀 Release v${version}",
+    "requireBranch": "master"
+  },
+  "github": {
+    "release": true,
+    "assets": ["dist/*.js"]
+  },
+  "gitlab": {
+    "release": true,
+    "assets": ["dist/*.js"]
+  },
+  "plugins": {
+    "@release-it/keep-a-changelog": {
+      "filename": "CHANGELOG.md"
+    }
+  }
+}
