@@ -1,6 +1,6 @@
 # gridjs-vue
 
-<div style="max-width: 50%; width: 100%; margin: 0 auto;"><img src="https://user-images.githubusercontent.com/2541728/84843482-ffc31c00-b015-11ea-95e8-dc6fb3931ad5.png" alt="gridjs-vue logo" /></div>
+![gridjs-vue logo](https://user-images.githubusercontent.com/2541728/84843482-ffc31c00-b015-11ea-95e8-dc6fb3931ad5.png)
 
 A Vue wrapper component for [Grid.js](https://gridjs.io).
 
