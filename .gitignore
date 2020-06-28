@@ -1,94 +1,78 @@
-# File created using '.gitignore Generator' for Visual Studio Code: https://bit.ly/vscode-gig
-
-# Created by https://www.toptal.com/developers/gitignore/api/visualstudiocode,macos,linux,sass,vue,vuejs
-# Edit at https://www.toptal.com/developers/gitignore?templates=visualstudiocode,macos,linux,sass,vue,vuejs
-
-### Linux ###
-*~
-
-# temporary files which can be created if a process still has a handle open of a deleted file
-.fuse_hidden*
-
-# KDE directory preferences
-.directory
-
-# Linux trash folder which might appear on any partition or disk
-.Trash-*
-
-# .nfs files are created when an open file is removed but is still being accessed
-.nfs*
-
-### macOS ###
-# General
-.DS_Store
-.AppleDouble
-.LSOverride
-
-# Icon must end with two \r
-Icon
-
-# Thumbnails
-._*
-
-# Files that might appear in the root of a volume
-.DocumentRevisions-V100
-.fseventsd
-.Spotlight-V100
-.TemporaryItems
-.Trashes
-.VolumeIcon.icns
-.com.apple.timemachine.donotpresent
-
-# Directories potentially created on remote AFP share
-.AppleDB
-.AppleDesktop
-Network Trash Folder
-Temporary Items
-.apdisk
-
-### Sass ###
-.sass-cache/
-*.css.map
-*.sass.map
-*.scss.map
-
-### VisualStudioCode ###
-.vscode/*
+!.vscode/extensions.json
+!.vscode/launch.json
 !.vscode/settings.json
 !.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-*.code-workspace
-
-### VisualStudioCode Patch ###
-# Ignore all local history of files
+._*
+.apdisk
+.AppleDB
+.AppleDesktop
+.AppleDouble
+.cache
+.cache/
+.com.apple.timemachine.donotpresent
+.directory
+.DocumentRevisions-V100
+.DS_Store
+.dynamodb/
+.env
+.env.test
+.eslintcache
+.fseventsd
+.fuse_hidden*
+.fusebox/
+.grunt
 .history
-
-### Vuejs ###
-# Recommended template: Node.gitignore
-
+.lock-wscript
+.LSOverride
+.next
+.nfs*
+.node_repl_history
+.npm
+.npmrc
+.nuxt
+.nyc_output
+.rpt2_cache/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rts2_cache_umd/
+.serverless/
+.Spotlight-V100
+.TemporaryItems
+.tern-port
+.Trash-*
+.Trashes
+.VolumeIcon.icns
+.vscode-test
+.vscode/*
+.vuepress/dist
+.yarn-integrity
+*.code-workspace
+*.lcov
+*.log
+*.pid
+*.pid.lock
+*.seed
+*.tgz
+*.tsbuildinfo
+*~
+bower_components
+build/Release
+coverage
+dist
+dist/
+docs/_book
+Icon
+jspm_packages/
+lerna-debug.log*
+lib-cov
+logs
+Network Trash Folder
 node_modules/
-#dist/
-
-# End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,macos,linux,sass,vue,vuejs
-
-# Custom rules (everything added below won't be overriden by 'Generate .gitignore File' if you use 'Update' option)
-
-# local env files
-.env.local
-.env.*.local
-
-# Log files
 npm-debug.log*
+pids
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+Temporary Items
+test/
+typings/
 yarn-debug.log*
 yarn-error.log*
-pnpm-debug.log*
-
-# Editor directories and files
-.idea
-.vscode
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
