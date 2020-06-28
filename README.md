@@ -1,6 +1,6 @@
 # gridjs-vue
 
-<center><img src="https://user-images.githubusercontent.com/2541728/84843482-ffc31c00-b015-11ea-95e8-dc6fb3931ad5.png" alt="gridjs-vue logo" /></center>
+<div style="max-width: 50%; width: 100%; margin: 0 auto;"><img src="https://user-images.githubusercontent.com/2541728/84843482-ffc31c00-b015-11ea-95e8-dc6fb3931ad5.png" alt="gridjs-vue logo" /></div>
 
 A Vue wrapper component for [Grid.js](https://gridjs.io).
 
@@ -124,6 +124,18 @@ Refer to [Grid.js documentation](https://gridjs.io/docs/config/) for specific co
         // An array containing strings of column headers (`columns` in the Grid.js API)
         cols: ['col 1', 'col 2'],
 
+        // OR an array containing objects defining column headers
+        cols: [
+          {
+            name: 'Column 1',
+            id: 'col1'
+          },
+          {
+            name: 'Column 2',
+            id: 'col2'
+          }
+        ]
+
         // AND EITHER an array containing row data (`data` in the Grid.js API)
         rows: [
           ['row 1 col 1', 'row 1 col 2'],
@@ -132,15 +144,15 @@ Refer to [Grid.js documentation](https://gridjs.io/docs/config/) for specific co
 
         // OR an array containing JSON row data
         rows: [
-          { 'col 1': 'row 1', 'col 2': 'row 1' },
-          { 'col 1': 'row 2', 'col 2': 'row 2' }
+          { col1: 'row 1', col2: 'row 1' },
+          { col1: 'row 2', col2: 'row 2' }
         ]
 
         // OR a function returning an array of row data
         rows() {
           return [
-            { 'col 1': 3 + 4, 'col 2': 5 + 6 },
-            { 'col 1': 1 * 2, 'col 2': 7 * 8 }
+            { col1: 3 + 4, col2: 5 + 6 },
+            { col1: 1 * 2, col2: 7 * 8 }
           ]
         }
 
