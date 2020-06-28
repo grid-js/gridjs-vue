@@ -112,6 +112,9 @@ export default {
     autoWidth() {
       this.update()
     },
+    classNames() {
+      this.update()
+    },
     cols() {
       this.update()
     },
@@ -136,6 +139,9 @@ export default {
     sort() {
       this.update()
     },
+    styles() {
+      this.update()
+    },
     width() {
       this.update()
     }
@@ -145,7 +151,7 @@ export default {
     this.uuid = nanoid()
 
     // select the unique wrapper element
-    this.wrapper = await elementReady(`[data-uuid="${this.uuid}"]`)
+    this.wrapper = await elementReady(`[data-uuid="${this.uuid}"]`, { stopOnDomReady: false })
 
     // assign styles
     if (this.theme !== 'none') await this.assignTheme()
