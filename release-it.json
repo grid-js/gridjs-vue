@@ -1,7 +1,8 @@
 {
   "git": {
-    "commitMessage": "🚀 Release v${version}",
-    "requireBranch": "master"
+    "commitMessage": "?? Release v${version}",
+    "requireBranch": "master",
+    "requireCleanWorkingDir": false
   },
   "github": {
     "release": true,
@@ -10,6 +11,9 @@
   "gitlab": {
     "release": true,
     "assets": ["dist/*.js"]
+  },
+  "npm": {
+    "skipChecks": true
   },
   "plugins": {
     "@release-it/keep-a-changelog": {
