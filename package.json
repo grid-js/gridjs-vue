@@ -1,7 +1,7 @@
 {
   "name": "gridjs-vue",
   "description": "A Vue.js wrapper component for Grid.js",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "license": "MIT",
   "private": false,
   "authors": [
