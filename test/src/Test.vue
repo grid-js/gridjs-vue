@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import Grid from 'gridjs-vue'
+import Grid from '../../dist/grid.test.js'
 
 export default {
   name: 'Test',

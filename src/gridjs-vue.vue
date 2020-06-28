@@ -7,6 +7,8 @@ import { Grid } from 'gridjs'
 import { nanoid } from 'nanoid'
 import elementReady from 'element-ready'
 
+import themeMermaid from 'gridjs/dist/theme/mermaid.css'
+
 export default {
   name: 'Grid',
   props: {
@@ -23,7 +25,7 @@ export default {
       default: undefined
     },
     from: {
-      type: String,
+      type: [String, Function],
       default: undefined
     },
     language: {
@@ -35,15 +37,15 @@ export default {
       default: false
     },
     rows: {
-      type: Array,
+      type: [Array, Function],
       default: undefined
     },
     search: {
-      type: [Object, Boolean],
+      type: Boolean,
       default: false
     },
     server: {
-      type: Object,
+      type: [Object, Function],
       default: undefined
     },
     sort: {
@@ -73,7 +75,10 @@ export default {
       },
       grid: null,
       uuid: null,
-      wrapper: null
+      wrapper: null,
+      themes: {
+        mermaid: themeMermaid
+      }
     }
   },
   computed: {
@@ -90,7 +95,11 @@ export default {
       // let classNames
 
       if (this.classNames) options.className = this.classNames
-      if (this.from) options.from = this.from
+      if (this.from)
+        options.from =
+          typeof this.from === 'string'
+            ? document.querySelector(this.from)
+            : document.createRange().createContextualFragment(this.from)
       if (this.language) options.language = this.language
       if (this.search) options.search = this.search
       if (this.server) options.server = this.server
@@ -139,7 +148,7 @@ export default {
     this.wrapper = await elementReady(`[data-uuid="${this.uuid}"]`)
 
     // assign styles
-    if (this.theme !== 'none') await this.assignStyles()
+    if (this.theme !== 'none') await this.assignTheme()
 
     // instantiate grid.js
     if (this.wrapper && (this.options.data || this.options.from || this.options.server)) {
@@ -152,46 +161,29 @@ export default {
     this.wrapper = undefined
   },
   methods: {
-    async assignStyles() {
-      const themes = ['mermaid']
+    async assignTheme() {
+      const head = document.getElementsByTagName('head')[0]
+      const id = `gridjs__${this.uuid}`
 
-      if (themes.includes(this.theme)) {
-        console.log(await import(`raw-loader!gridjs/dist/theme/${this.theme}.css`))
+      let stylesheet = document.createRange().createContextualFragment(`
+        <style title="${id}_theme" type="text/css">
+          ${this.themes[this.theme]}
+        </style>
+      `)
+      head.appendChild(stylesheet)
+
+      for (let index in document.styleSheets) {
+        if (document.styleSheets[index].title === `${id}_theme`) stylesheet = document.styleSheets[index]
       }
 
-      const styleSheets = document.styleSheets
-      const id = `#gridjs__${this.uuid}`
-
-      for (const sheetIndex in styleSheets) {
-        const ss = styleSheets[sheetIndex]
-        if (
-          ss.cssRules &&
-          ss.cssRules.length &&
-          ss.cssRules[0] &&
-          ss.cssRules[0].selectorText &&
-          /^.gridjs/.test(ss.cssRules[0].selectorText)
-        ) {
-          for (const index in ss.cssRules) {
-            let css = ss.cssRules[index].cssText
-            if (css && !/@/g.test(css)) {
-              const rule = `${id} ${css}`
-              ss.deleteRule(index)
-              ss.insertRule(rule, index)
-            }
+      if (stylesheet instanceof CSSStyleSheet) {
+        for (const index in stylesheet.cssRules) {
+          let css = stylesheet.cssRules[index].cssText
+          if (css && !/@/g.test(css)) {
+            const rule = `#${id} ${css}`
+            stylesheet.deleteRule(index)
+            stylesheet.insertRule(rule, index)
           }
-
-          const wrapperStyle = `
-            ${id}.gridjs__wrapper {
-              align-items: center;
-              display: flex;
-              height: fit-content;
-              justify-content: center;
-              width: 100%;
-            }
-          `
-          ss.insertRule(wrapperStyle)
-          styleSheets[sheetIndex].disabled = false
-          break
         }
       }
     },
@@ -201,3 +193,13 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.gridjs__wrapper {
+  align-items: center;
+  display: flex;
+  height: fit-content;
+  justify-content: center;
+  width: 100%;
+}
+</style>

@@ -5,11 +5,14 @@ module.exports = {
     format: ['cjs', 'esm', 'umd'],
     bundleNodeModules: true,
     minify: true,
-    moduleName: 'Grid'
+    moduleName: 'Grid',
+    extractCSS: false
   },
   plugins: {
     vue: {
-      runtimeHelpers: true
+      target: 'browser',
+      runtimeHelpers: true,
+      css: true
     },
     babel: {
       presets: ['vue', ['@babel/preset-env', { useBuiltIns: 'usage', corejs: 3 }]],
@@ -18,5 +21,6 @@ module.exports = {
       configFile: false
     },
     'node-resolve': true
-  }
+  },
+  external: 'crypto'
 }
