@@ -2,9 +2,14 @@
 
 All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
+## [0.4.1] - 2020-07-14
+
+- Update documentation
+
 ## [0.4.0] - 2020-07-14
 
-- 🤷🏻
+- Fix global import
+- Add createRef, h, html methods
 
 ## [0.3.5] - 28 June 2020
 

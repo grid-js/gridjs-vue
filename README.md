@@ -73,11 +73,13 @@ Refer to [Grid.js documentation](https://gridjs.io/docs/config/) for specific co
 
 ### Grid.js Helper Functions
 
-If you install the component as a plugin, rather than importing it directly into your component, the following helpers are added to the Vue prototype and are available globally.
+If you install the component globally, rather than importing it locally, the following helpers are added to the Vue prototype and are available globally.
 
 #### `this.$gridjs.createRef`
 
 Returns a [reference to the Grid.js instance](https://gridjs.io/docs/examples/stock-market).
+
+Example:
 
 ```js
 const ref = this.$gridjs.createRef
@@ -86,6 +88,8 @@ const ref = this.$gridjs.createRef
 #### `this.$gridjs.h`
 
 Renders a [Preact virtual DOM instance](https://gridjs.io/docs/examples/virtual-dom).
+
+Example:
 
 ```js
 {
@@ -102,6 +106,8 @@ Renders a [Preact virtual DOM instance](https://gridjs.io/docs/examples/virtual-
 #### `this.$gridjs.html`
 
 Renders [HTML in a formatter function](https://gridjs.io/docs/examples/html-cells).
+
+Example:
 
 ```js
 {
