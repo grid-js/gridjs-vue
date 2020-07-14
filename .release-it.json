@@ -4,10 +4,6 @@
     "requireBranch": "master",
     "requireCleanWorkingDir": false
   },
-  "github": {
-    "release": true,
-    "assets": ["dist/*.js"]
-  },
   "gitlab": {
     "release": true,
     "assets": ["dist/*.js"]
