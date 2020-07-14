@@ -8,7 +8,7 @@ export default [
   {
     input: './src/index.js',
     output: {
-      file: './dist/grid.test.js',
+      file: './dist/index.test.js',
       format: 'cjs',
       exports: 'named'
     },

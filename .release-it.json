@@ -1,6 +1,6 @@
 {
   "git": {
-    "commitMessage": "?? Release v${version}",
+    "commitMessage": "Release v${version}",
     "requireBranch": "master",
     "requireCleanWorkingDir": false
   },

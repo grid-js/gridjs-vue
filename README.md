@@ -4,6 +4,8 @@
 
 A Vue wrapper component for [Grid.js](https://gridjs.io).
 
+[![npm](https://img.shields.io/npm/v/gridjs-vue?color=41B883&label=current&style=flat-square)](https://www.npmjs.com/package/gridjs-vue) [![Grid.js API version](https://img.shields.io/github/package-json/dependency-version/grid-js/gridjs-vue/gridjs?color=41B883&label=grid.js%20api&style=flat-square)](https://gridjs.io/docs/index) [![David](https://img.shields.io/david/grid-js/gridjs-vue?color=41B883&style=flat-square)](https://david-dm.org/grid-js/gridjs-vue) ![GitHub last commit](https://img.shields.io/github/last-commit/grid-js/gridjs-vue?color=41B883&style=flat-square) [![GitHub issues](https://img.shields.io/github/issues/grid-js/gridjs-vue?color=41B883&style=flat-square)](https://github.com/grid-js/gridjs-vue/issues) [![Discord](https://img.shields.io/discord/711188165850955858?color=41B883&style=flat-square&label=discord)](https://discord.com/invite/K55BwDY)
+
 ## Install
 
 ```sh
@@ -30,16 +32,16 @@ npm install gridjs-vue
 
 ```js
 /* in `main.js` or wherever you specify your global components */
-import Grid from 'gridjs-vue'
+import { GridGlobal } from 'gridjs-vue'
 
-Vue.use(Grid)
+Vue.use(GridGlobal)
 ```
 
 ## Usage
 
-Pass `cols` (an array of column headers) and either `rows`, `from`, or `server` as a data source to the component. Everything else is optional.
+Pass `cols` (an array of column headers) and either `rows`, `from`, or `server` as a data source to the component. Everything else is optional. Pass in new data to update the table.
 
-Refer to [Grid.js documentation](https://gridjs.io/docs/config/) for specific configuration options.
+Refer to [Grid.js documentation](https://gridjs.io/docs/config/) for specific configuration options. This module may lag behind the main Grid.js module somewhat, so check the API version badge at the top of this README.
 
 ### Basic Example
 
@@ -67,6 +69,45 @@ Refer to [Grid.js documentation](https://gridjs.io/docs/config/) for specific co
     }
   }
 </script>
+```
+
+### Grid.js Helper Functions
+
+If you install the component as a plugin, rather than importing it directly into your component, the following helpers are added to the Vue prototype and are available globally.
+
+#### `this.$gridjs.createRef`
+
+Returns a [reference to the Grid.js instance](https://gridjs.io/docs/examples/stock-market).
+
+```js
+const ref = this.$gridjs.createRef
+```
+
+#### `this.$gridjs.h`
+
+Renders a [Preact virtual DOM instance](https://gridjs.io/docs/examples/virtual-dom).
+
+```js
+{
+  name: 'Actions',
+  formatter: (cell, row) => {
+    return this.$gridjs.h('button', {
+      className: 'py-2 mb-4 px-4 border rounded-md text-white bg-blue-600',
+      onClick: () => alert(`Editing "${row.cells[0].data}" "${row.cells[1].data}"`)
+    } 'Edit');
+  }
+}
+```
+
+#### `this.$gridjs.html`
+
+Renders [HTML in a formatter function](https://gridjs.io/docs/examples/html-cells).
+
+```js
+{
+  name: 'Name',
+  formatter: (cell) => this.$gridjs.html(`<b>${cell}</b>`)
+}
 ```
 
 ### Default Options
@@ -132,9 +173,10 @@ Refer to [Grid.js documentation](https://gridjs.io/docs/config/) for specific co
           },
           {
             name: 'Column 2',
-            id: 'col2'
+            id: 'col2',
+            formatter: (cell) => this.$gridjs.html(`<b>${cell}</b>`)
           }
-        ]
+        ],
 
         // AND EITHER an array containing row data (`data` in the Grid.js API)
         rows: [
@@ -146,7 +188,7 @@ Refer to [Grid.js documentation](https://gridjs.io/docs/config/) for specific co
         rows: [
           { col1: 'row 1', col2: 'row 1' },
           { col1: 'row 2', col2: 'row 2' }
-        ]
+        ],
 
         // OR a function returning an array of row data
         rows() {
@@ -154,7 +196,7 @@ Refer to [Grid.js documentation](https://gridjs.io/docs/config/) for specific co
             { col1: 3 + 4, col2: 5 + 6 },
             { col1: 1 * 2, col2: 7 * 8 }
           ]
-        }
+        },
 
         // OR a string of an HTML table selector to import
         from: '.my-element',
@@ -167,7 +209,7 @@ Refer to [Grid.js documentation](https://gridjs.io/docs/config/) for specific co
               <tr><td>${1 * 2}</td></tr>
             </table>
           `
-        }
+        },
 
         // OR a server settings function or object
         server() ({

@@ -99,7 +99,7 @@ export default {
         options.from =
           typeof this.from === 'string'
             ? document.querySelector(this.from)
-            : document.createRange().createContextualFragment(this.from)
+            : document.createRange().createContextualFragment(this.from())
       if (this.language) options.language = this.language
       if (this.search) options.search = this.search
       if (this.server) options.server = this.server
