@@ -21,7 +21,7 @@ export default {
       default: undefined
     },
     cols: {
-      type: Array,
+      type: [Array, Function],
       default: undefined
     },
     from: {
@@ -194,7 +194,7 @@ export default {
       }
     },
     update() {
-      this.grid.updateConfig(this.options).forceRender()
+      if (this.grid) this.grid.updateConfig(this.options).forceRender()
     }
   }
 }
