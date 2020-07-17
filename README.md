@@ -71,97 +71,6 @@ Refer to [Grid.js documentation](https://gridjs.io/docs/config/) for specific co
 </script>
 ```
 
-### Helper Functions
-
-If you install the component globally, rather than importing it locally, the following helpers are added to the Vue prototype and are available globally.
-
-#### \$gridjs.uuid
-
-Returns a unique identifier that can be used to reference the current cell.
-
-Usage:
-
-```js
-const ref = this.$gridjs.uuid()
-```
-
-#### \$gridjs.h
-
-Renders a [Preact virtual DOM instance](https://gridjs.io/docs/examples/virtual-dom). Grid.js is built in Preact, so why not take advantage of it?
-
-Usage:
-
-```js
-this.cols = [
-  {
-    name: 'Actions',
-    formatter: (cell, row) => {
-      return this.$gridjs.h('button', {
-        className: 'py-2 mb-4 px-4 border rounded-md text-white bg-blue-600',
-        onClick: () => alert(`Editing "${row.cells[0].data}" "${row.cells[1].data}"`)
-      } 'Edit');
-    }
-  },
-  { ... },
-  { ... }
-]
-```
-
-#### \$gridjs.html
-
-Renders [HTML in a formatter function](https://gridjs.io/docs/examples/html-cells).
-
-Example:
-
-```js
-this.cols = [
-  {
-    name: 'Model',
-    formatter: cell => this.$gridjs.html(`<b>${cell}</b>`)
-  },
-  { ... },
-  { ... }
-]
-```
-
-#### \$gridjs.render
-
-Renders a Vue component. Refer to [Vue documentation](https://vuejs.org/v2/guide/render-function.html#createElement-Arguments) for advanced options.
-
-Usage:
-
-```js
-this.$gridjs.render(ref, component, { props }, { options })
-```
-
-Example:
-
-```js
-import FormatterComponent from './FormatterComponent.vue'
-
-[...]
-
-this.cols = [
-  {
-    name: 'Model',
-    formatter: cell => {
-      const current = this.$gridjs.uuid()
-      this.$gridjs.render(
-        `[data-ref="${current}"]`,
-        FormatterComponent,
-        {
-          content: cell,
-          otherProp: true
-        }
-      )
-      return this.$gridjs.html(`<div data-ref="${current}"></div>`)
-    }
-  },
-  { ... },
-  { ... }
-]
-```
-
 ### Default Options
 
 ```json
@@ -304,6 +213,97 @@ this.cols = [
     }
   }
 </script>
+```
+
+### Helper Functions
+
+If you install the component globally, rather than importing it locally, the following helpers are added to the Vue prototype and are available globally.
+
+#### \$gridjs.uuid
+
+Returns a unique identifier that can be used to reference the current cell.
+
+Usage:
+
+```js
+const ref = this.$gridjs.uuid()
+```
+
+#### \$gridjs.h
+
+Renders a [Preact virtual DOM instance](https://gridjs.io/docs/examples/virtual-dom). Grid.js is built in Preact, so why not take advantage of it?
+
+Usage:
+
+```js
+this.cols = [
+  {
+    name: 'Actions',
+    formatter: (cell, row) => {
+      return this.$gridjs.h('button', {
+        className: 'py-2 mb-4 px-4 border rounded-md text-white bg-blue-600',
+        onClick: () => alert(`Editing "${row.cells[0].data}" "${row.cells[1].data}"`)
+      } 'Edit');
+    }
+  },
+  { ... },
+  { ... }
+]
+```
+
+#### \$gridjs.html
+
+Renders [HTML in a formatter function](https://gridjs.io/docs/examples/html-cells).
+
+Example:
+
+```js
+this.cols = [
+  {
+    name: 'Model',
+    formatter: cell => this.$gridjs.html(`<b>${cell}</b>`)
+  },
+  { ... },
+  { ... }
+]
+```
+
+#### \$gridjs.render
+
+Renders a Vue component. Refer to [Vue documentation](https://vuejs.org/v2/guide/render-function.html#createElement-Arguments) for advanced options.
+
+Usage:
+
+```js
+this.$gridjs.render(ref, component, { props }, { options })
+```
+
+Example:
+
+```js
+import FormatterComponent from './FormatterComponent.vue'
+
+[...]
+
+this.cols = [
+  {
+    name: 'Model',
+    formatter: cell => {
+      const current = this.$gridjs.uuid()
+      this.$gridjs.render(
+        `[data-ref="${current}"]`,
+        FormatterComponent,
+        {
+          content: cell,
+          otherProp: true
+        }
+      )
+      return this.$gridjs.html(`<div data-ref="${current}"></div>`)
+    }
+  },
+  { ... },
+  { ... }
+]
 ```
 
 ## 🤝 Contributing
