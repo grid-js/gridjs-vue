@@ -1,13 +1,19 @@
 {
   "name": "gridjs-vue",
   "description": "A Vue.js wrapper component for Grid.js",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "license": "MIT",
   "private": false,
   "authors": [
     "Daniel Sieradski <hello@self.agency>",
     "Afshin Mehrabani <afshin.meh@gmail.com>"
   ],
+  "homepage": "https://gridjs.io/",
+  "bugs": "https://github.com/grid-js/gridjs-vue/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/grid-js/gridjs-vue.git"
+  },
   "main": "./dist/index.js",
   "umd": "./dist/index.umd.js",
   "module": "./dist/index.esm.js",
