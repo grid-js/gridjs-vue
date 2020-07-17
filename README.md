@@ -75,7 +75,7 @@ Refer to [Grid.js documentation](https://gridjs.io/docs/config/) for specific co
 
 If you install the component globally, rather than importing it locally, the following helpers are added to the Vue prototype and are available globally.
 
-#### `this.$gridjs.uuid`
+#### \$gridjs.uuid
 
 Returns a unique identifier that can be used to reference the current cell.
 
@@ -85,7 +85,7 @@ Usage:
 const ref = this.$gridjs.uuid()
 ```
 
-#### `this.$gridjs.h`
+#### \$gridjs.h
 
 Renders a [Preact virtual DOM instance](https://gridjs.io/docs/examples/virtual-dom).
 
@@ -107,7 +107,7 @@ this.cols = [
 ]
 ```
 
-#### `this.$gridjs.html`
+#### \$gridjs.html
 
 Renders [HTML in a formatter function](https://gridjs.io/docs/examples/html-cells).
 
@@ -116,23 +116,25 @@ Example:
 ```js
 this.cols = [
   {
-  name: 'Model',
-  formatter: (cell) => this.$gridjs.html(`<b>${cell}</b>`)
+    name: 'Model',
+    formatter: (cell) => this.$gridjs.html(`<b>${cell}</b>`)
   },
   { ... },
   { ... }
 ]
 ```
 
-#### `this.$gridjs.render`
+#### \$gridjs.render
 
 Renders a Vue component. Refer to [Vue documentation](https://vuejs.org/v2/guide/render-function.html#createElement-Arguments) for advanced options.
+
+Usage:
 
 ```js
 this.$gridjs.render(ref, component, { props }, { options })
 ```
 
-Usage:
+Example:
 
 ```js
 import FormatterComponent from './FormatterComponent.vue'
