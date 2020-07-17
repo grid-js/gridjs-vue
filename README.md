@@ -146,7 +146,14 @@ this.cols = [
     name: 'Model',
     formatter: cell => {
       const current = this.$gridjs.uuid()
-      this.$gridjs.render(`[data-ref="${current}"]`, FormatterComponent, { content: cell, otherProp: true })
+      this.$gridjs.render(
+        `[data-ref="${current}"]`,
+        FormatterComponent,
+        {
+          content: cell,
+          otherProp: true
+        }
+      )
       return this.$gridjs.html(`<div data-ref="${current}"></div>`)
     }
   },
