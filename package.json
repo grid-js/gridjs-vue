@@ -44,7 +44,7 @@
     "@vue/eslint-config-prettier": "^6.0.0",
     "babel-eslint": "^10.1.0",
     "babel-preset-vue": "^2.0.2",
-    "bili": "^4.10.1",
+    "bili": "^5.0.5",
     "bili-babel": "^0.2.0",
     "core-js": "^3.6.5",
     "cross-env": "^5.2.0",
