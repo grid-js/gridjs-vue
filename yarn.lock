@@ -3593,9 +3593,9 @@ graceful-fs@^4.1.2:
   integrity sha512-WjKPNJF79dtJAVniUlGGWHYGz2jWxT6VhN/4m1NdkbZ2nOsEF+cI1Edgql5zCRhs/VsQYRvrXctxktVXZUkixw==
 
 gridjs@^1.11.0:
-  version "1.11.0"
-  resolved "https://registry.yarnpkg.com/gridjs/-/gridjs-1.11.0.tgz#9b168d49c949ad44083efb6a28ed3861f2d7bdec"
-  integrity sha512-xg1Q3sdy6+d5fM3LPCfGzYqP1gcq54GcittSYiX3DRs51V8oETGiilPTLAhsNNnwG/FyF01DYUe91Wtr9UEotA==
+  version "1.15.2"
+  resolved "https://registry.yarnpkg.com/gridjs/-/gridjs-1.15.2.tgz#43438da603e7d832c0e0ba12633914deaaac9626"
+  integrity sha512-AhkNRu+5Fn84YtGIl6F/G6oJ657+hZRoGESVOK5m7s3bi3eC0ECv/X+aOnx1/BjNHmPC7TIAY3nnxE5betfaQg==
   dependencies:
     preact "^10.4.4"
     tslib "~2.0.0"
