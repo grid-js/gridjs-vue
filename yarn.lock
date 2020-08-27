@@ -1100,36 +1100,36 @@
   dependencies:
     "@types/node" "*"
 
-"@vue/compiler-core@3.0.0-beta.24":
-  version "3.0.0-beta.24"
-  resolved "https://registry.yarnpkg.com/@vue/compiler-core/-/compiler-core-3.0.0-beta.24.tgz#7b62a24a9b6bb0d98c1e22149ba4cc67bd676d6a"
-  integrity sha512-hBPMU/8NtxkrL2utPzCdsB3Jebe1gUR0ijl5nUyE0iGejt+ONq9pBX68dktFzcrJxbf/n41wcN1tI2iFC3osvA==
+"@vue/compiler-core@3.0.0-rc.9":
+  version "3.0.0-rc.9"
+  resolved "https://registry.yarnpkg.com/@vue/compiler-core/-/compiler-core-3.0.0-rc.9.tgz#f2baef360dec3630a230a056dde1e76c9c7bb5f5"
+  integrity sha512-/Ns7KGT5P0wh4JTM91drBmNIiBlKrCFUqIE2vk8dmaVvqEJf1mqympz1CDZpikghCQC6hKu3tYKxA7qtcMRazw==
   dependencies:
     "@babel/parser" "^7.10.4"
     "@babel/types" "^7.10.4"
-    "@vue/shared" "3.0.0-beta.24"
+    "@vue/shared" "3.0.0-rc.9"
     estree-walker "^2.0.1"
     source-map "^0.6.1"
 
-"@vue/compiler-dom@3.0.0-beta.24":
-  version "3.0.0-beta.24"
-  resolved "https://registry.yarnpkg.com/@vue/compiler-dom/-/compiler-dom-3.0.0-beta.24.tgz#287c1c80686824a56b6d8b246def9f7d86d534d3"
-  integrity sha512-Nav5CqiOf4aIWnxJ+8+lSquAQccF1nRe7VzGrwigX8/pb0rMyNlRgxRRa+xnHJ+q5aNZEKlCHCxNQDKVzxP2Zw==
+"@vue/compiler-dom@3.0.0-rc.9":
+  version "3.0.0-rc.9"
+  resolved "https://registry.yarnpkg.com/@vue/compiler-dom/-/compiler-dom-3.0.0-rc.9.tgz#2a122181db498c0605213fe541af24ecb03ef27e"
+  integrity sha512-0hCnrIxwp0TKVXKnGYFztM4LMUvFpfXW7YoEglvHqIfZsGkyKcnCYDx4FPk1frDM21xnrr5HgcHt42rlz8lDBA==
   dependencies:
-    "@vue/compiler-core" "3.0.0-beta.24"
-    "@vue/shared" "3.0.0-beta.24"
+    "@vue/compiler-core" "3.0.0-rc.9"
+    "@vue/shared" "3.0.0-rc.9"
 
 "@vue/compiler-sfc@^3.0.0-beta.24":
-  version "3.0.0-beta.24"
-  resolved "https://registry.yarnpkg.com/@vue/compiler-sfc/-/compiler-sfc-3.0.0-beta.24.tgz#0ecc8b682a3688c41ada23a6db1ad4b4547aae25"
-  integrity sha512-okWJnk2yiJEVUMbrm+RT7gMRBFtkNqSnAqFQFvQzJgbjzDccMAnH0Y3B4oYU88t0+4xGyl6xxtHGRVmP93JTCA==
+  version "3.0.0-rc.9"
+  resolved "https://registry.yarnpkg.com/@vue/compiler-sfc/-/compiler-sfc-3.0.0-rc.9.tgz#8b1af6bf1cb2561b5f92ce11053e5d21b558ca8b"
+  integrity sha512-kmjGzcyp93Q+ZKfvxC3GtI9bEXCa9TxsuO+Q9WtiyvOWBLxZkklQc1n5DFn6vtAUIjjlIE5GZoKawvn9LfKejA==
   dependencies:
     "@babel/parser" "^7.10.4"
     "@babel/types" "^7.10.4"
-    "@vue/compiler-core" "3.0.0-beta.24"
-    "@vue/compiler-dom" "3.0.0-beta.24"
-    "@vue/compiler-ssr" "3.0.0-beta.24"
-    "@vue/shared" "3.0.0-beta.24"
+    "@vue/compiler-core" "3.0.0-rc.9"
+    "@vue/compiler-dom" "3.0.0-rc.9"
+    "@vue/compiler-ssr" "3.0.0-rc.9"
+    "@vue/shared" "3.0.0-rc.9"
     consolidate "^0.15.1"
     estree-walker "^2.0.1"
     hash-sum "^2.0.0"
@@ -1141,13 +1141,13 @@
     postcss-selector-parser "^6.0.2"
     source-map "^0.6.1"
 
-"@vue/compiler-ssr@3.0.0-beta.24":
-  version "3.0.0-beta.24"
-  resolved "https://registry.yarnpkg.com/@vue/compiler-ssr/-/compiler-ssr-3.0.0-beta.24.tgz#3bdeaee92cb7b83515d270e0f52a3de623642638"
-  integrity sha512-mierRRq4fc8Im0+qS5tY+HJhgpWAGXjgA8yii1okw/S2IYTrPJvoVq2zgso/24R1d0ygv4CZUVwy2xpdOKBb0w==
+"@vue/compiler-ssr@3.0.0-rc.9":
+  version "3.0.0-rc.9"
+  resolved "https://registry.yarnpkg.com/@vue/compiler-ssr/-/compiler-ssr-3.0.0-rc.9.tgz#52e4523b54d993ca0ad137813c5b1212988e62af"
+  integrity sha512-lpbnkJrhkI5QgprLPXcB1Uq402QiibPFKRUQZ5vu3zeAvUeMYuQUtZS/Dslurcvqd1dbBC/HM0gCpLtjEQ+2qA==
   dependencies:
-    "@vue/compiler-dom" "3.0.0-beta.24"
-    "@vue/shared" "3.0.0-beta.24"
+    "@vue/compiler-dom" "3.0.0-rc.9"
+    "@vue/shared" "3.0.0-rc.9"
 
 "@vue/component-compiler-utils@^3.0.0", "@vue/component-compiler-utils@^3.1.2":
   version "3.1.2"
@@ -1188,10 +1188,10 @@
   dependencies:
     eslint-config-prettier "^6.0.0"
 
-"@vue/shared@3.0.0-beta.24":
-  version "3.0.0-beta.24"
-  resolved "https://registry.yarnpkg.com/@vue/shared/-/shared-3.0.0-beta.24.tgz#ca09ebd324ce30cc2ef8b729fe2cead5602f9c54"
-  integrity sha512-E41lsRKH9KnMuqkpJTSGZSqWDxy77/j2VXXo5BDFjU8h1sEiVAb/nQ4c3nXe3JmksFLlwQMXAT4+MxUhw8D+vA==
+"@vue/shared@3.0.0-rc.9":
+  version "3.0.0-rc.9"
+  resolved "https://registry.yarnpkg.com/@vue/shared/-/shared-3.0.0-rc.9.tgz#81e71c2c40dbbfc4f05b3b4a3f92cb2842864aa3"
+  integrity sha512-SHD7qwziiG6208nKrs0qqbWbYckvBiCBCLwlRjUb6NEDUMN0TOVyzyaTvdnHND9ion/ZMdwEKMtWWtgJJkHDdw==
 
 acorn-dynamic-import@^4.0.0:
   version "4.0.0"
