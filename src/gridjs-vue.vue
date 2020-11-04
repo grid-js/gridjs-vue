@@ -159,6 +159,11 @@ export default {
     // instantiate grid.js
     if (this.wrapper && (this.options.data || this.options.from || this.options.server)) {
       this.grid = new Grid(this.options).render(this.wrapper)
+	  this.grid.on('rowClick', (...args) => {this.$emit('grid-row-click', args)})
+      this.grid.on('cellClick', (...args) => {this.$emit('grid-cell-click', args)})
+      this.grid.on('ready', (...args) => {this.$emit('grid-ready', args)})
+      this.grid.on('beforeLoad', (...args) => {this.$emit('grid-before-load', args)})
+      this.grid.on('load', (...args) => {this.$emit('grid-load', args)})
     }
   },
   destroyed() {
