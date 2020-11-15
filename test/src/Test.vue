@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import Grid from '../../dist/grid.test.js'
+import Grid from '../../dist/index.js'
 
 export default {
   name: 'Test',
