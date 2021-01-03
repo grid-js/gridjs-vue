@@ -2682,9 +2682,9 @@ core-js@^2.4.0, core-js@^2.5.0:
   integrity sha512-5wjnpaT/3dV+XB4borEsnAYQchn00XSgTAWKDkEqv+K8KevjbzmofK6hfJ9TZIlpj2N0xQpazy7PiRQiWHqzWg==
 
 core-js@^3.6.5:
-  version "3.8.1"
-  resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.8.1.tgz#f51523668ac8a294d1285c3b9db44025fda66d47"
-  integrity sha512-9Id2xHY1W7m8hCl8NkhQn5CufmF/WuR30BTRewvCXc1aZd3kMECwNZ69ndLbekKfakw9Rf2Xyc+QR6E7Gg+obg==
+  version "3.8.2"
+  resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.8.2.tgz#0a1fd6709246da9ca8eff5bb0cbd15fba9ac7044"
+  integrity sha512-FfApuSRgrR6G5s58casCBd9M2k+4ikuu4wbW6pJyYU7bd9zvFc9qf7vr5xmrZOhT9nn+8uwlH1oRR9jTnFoA3A==
 
 cosmiconfig@6.0.0:
   version "6.0.0"
@@ -3741,10 +3741,10 @@ graceful-fs@^4.1.2:
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.4.tgz#2256bde14d3632958c465ebc96dc467ca07a29fb"
   integrity sha512-WjKPNJF79dtJAVniUlGGWHYGz2jWxT6VhN/4m1NdkbZ2nOsEF+cI1Edgql5zCRhs/VsQYRvrXctxktVXZUkixw==
 
-gridjs@^3.0.2:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/gridjs/-/gridjs-3.1.0.tgz#f2d4b2ec8a5d88df83a5fd4019c23026f4c2ba76"
-  integrity sha512-QIxWUZ3avjBtE8n/3IPdhowgHI4Tjp5HuhYGU91RF4JQla0LvIVNl6DVSWlSWIsYJkGrC7jpenPjeZZ5ULbpQw==
+gridjs@^3.2.1:
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/gridjs/-/gridjs-3.2.1.tgz#0b3d240bc6d7f546c71238e6c0c3d2e0af289df8"
+  integrity sha512-2g2doNGj1/6PUUbT2uAyJ8myDUX/BnQDpLBUC5WWXxpZjYGxK9tg4mm+Yp34/WiUCIjQHWq6TEVKjmY8GKWDlA==
   dependencies:
     preact "^10.5.7"
     tslib "^2.0.1"
