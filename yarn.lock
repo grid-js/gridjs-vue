@@ -3741,10 +3741,10 @@ graceful-fs@^4.1.2:
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.4.tgz#2256bde14d3632958c465ebc96dc467ca07a29fb"
   integrity sha512-WjKPNJF79dtJAVniUlGGWHYGz2jWxT6VhN/4m1NdkbZ2nOsEF+cI1Edgql5zCRhs/VsQYRvrXctxktVXZUkixw==
 
-gridjs@^3.0.2:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/gridjs/-/gridjs-3.1.0.tgz#f2d4b2ec8a5d88df83a5fd4019c23026f4c2ba76"
-  integrity sha512-QIxWUZ3avjBtE8n/3IPdhowgHI4Tjp5HuhYGU91RF4JQla0LvIVNl6DVSWlSWIsYJkGrC7jpenPjeZZ5ULbpQw==
+gridjs@^3.2.1:
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/gridjs/-/gridjs-3.2.1.tgz#0b3d240bc6d7f546c71238e6c0c3d2e0af289df8"
+  integrity sha512-2g2doNGj1/6PUUbT2uAyJ8myDUX/BnQDpLBUC5WWXxpZjYGxK9tg4mm+Yp34/WiUCIjQHWq6TEVKjmY8GKWDlA==
   dependencies:
     preact "^10.5.7"
     tslib "^2.0.1"
@@ -6219,9 +6219,9 @@ rollup@^1.1.2:
     acorn "^7.1.0"
 
 rollup@^2.21.0:
-  version "2.35.1"
-  resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.35.1.tgz#e6bc8d10893556a638066f89e8c97f422d03968c"
-  integrity sha512-q5KxEyWpprAIcainhVy6HfRttD9kutQpHbeqDTWnqAFNJotiojetK6uqmcydNMymBEtC4I8bCYR+J3mTMqeaUA==
+  version "2.36.1"
+  resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.36.1.tgz#2174f0c25c7b400d57b05628d0e732c7ae8d2178"
+  integrity sha512-eAfqho8dyzuVvrGqpR0ITgEdq0zG2QJeWYh+HeuTbpcaXk8vNFc48B7bJa1xYosTCKx0CuW+447oQOW8HgBIZQ==
   optionalDependencies:
     fsevents "~2.1.2"
 
