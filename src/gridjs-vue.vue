@@ -41,7 +41,7 @@ export default {
       default: undefined
     },
     search: {
-      type: Boolean,
+      type: [Object, Boolean],
       default: false
     },
     server: {
