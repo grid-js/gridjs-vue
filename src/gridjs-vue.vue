@@ -28,6 +28,10 @@ export default {
       type: [String, Function],
       default: undefined
     },
+    height: {
+      type: [String],
+      default: undefined
+    },
     language: {
       type: Object,
       default: undefined
@@ -87,12 +91,11 @@ export default {
         autoWidth: this.autoWidth,
         columns: this.cols ? this.cols : [this.dict.error.columnsUndefined],
         data: this.rows ? this.rows : this.from || this.server ? undefined : [[this.dict.error.rowsUndefined]],
+        height: this.height,
         pagination: this.pagination,
         sort: this.sort,
         width: this.width
       }
-
-      // let classNames
 
       if (this.classNames) options.className = this.classNames
       if (this.from)
@@ -119,6 +122,9 @@ export default {
       this.update()
     },
     from() {
+      this.update()
+    },
+    height() {
       this.update()
     },
     language() {

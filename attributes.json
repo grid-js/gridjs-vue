@@ -15,6 +15,10 @@
     "type": ["string", "function"],
     "description": "String of HTML table selector or function returning HTML table string. Default: undefined"
   },
+  "gridjs-vue/height": {
+    "type": "string",
+    "description": "String that sets the height of the table excluding search, pagination, etc. Default: undefined"
+  },
   "gridjs-vue/language": {
     "type": "object",
     "description": "Localization dictionary object. Default: undefined"
