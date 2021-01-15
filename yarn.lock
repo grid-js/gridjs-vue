@@ -3168,12 +3168,12 @@ electron-to-chromium@^1.3.621:
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.633.tgz#16dd5aec9de03894e8d14a1db4cda8a369b9b7fe"
   integrity sha512-bsVCsONiVX1abkWdH7KtpuDAhsQ3N3bjPYhROSAXE78roJKet0Y5wznA14JE9pzbwSZmSMAW6KiKYf1RvbTJkA==
 
-element-ready@^4.1.1:
-  version "4.1.1"
-  resolved "https://registry.yarnpkg.com/element-ready/-/element-ready-4.1.1.tgz#1aceb47c69022df23e42ae3280ac89fd585346d8"
-  integrity sha512-GdMA0nVR8YL9adRU//YCwI0aunw4d8oI+9gSH2kJLwcdsYBoGUWbG79AGfvcmlUyLE+amZXOe1VX2nTlcsxYBQ==
+element-ready@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/element-ready/-/element-ready-5.0.0.tgz#5a47318c4b2c018f697e21ef22edd284f87d18f8"
+  integrity sha512-eKSRBkCaYhxQgxb1Lray3pV8sstpleUTQF1vNMXXb+hu05reDhIZYQdqygBnS/M7LbvdSPZ6AwG/LYpPmlKU6A==
   dependencies:
-    many-keys-map "^1.0.1"
+    many-keys-map "^1.0.3"
     p-defer "^3.0.0"
 
 emoji-regex@^7.0.1:
@@ -4773,10 +4773,10 @@ make-dir@^3.0.0:
   dependencies:
     semver "^6.0.0"
 
-many-keys-map@^1.0.1:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/many-keys-map/-/many-keys-map-1.0.2.tgz#ae0a38510529be67738a9d1bb98ddc2f09a9f282"
-  integrity sha512-bOXZsgmnTHkvWQCpq9WBnX5JNfJ1WTq9+QdzXe1UA3eu0+8llCrDSPOTKo1IVUrnzW0N0f9pZd95CDpKUC73uw==
+many-keys-map@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/many-keys-map/-/many-keys-map-1.0.3.tgz#718f407dea882c23ab75d48280c7d5be2fbf57a0"
+  integrity sha512-Iguobalgc8YO1kbN1U9R/j6u3QFf6bwIh37HKYFgEtUJNJd79INgLwtdiiOgBPoBqZ/ZVc4zziRaVg0EiJ+82g==
 
 mdn-data@2.0.4:
   version "2.0.4"
