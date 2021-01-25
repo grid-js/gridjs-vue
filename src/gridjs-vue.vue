@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <article :id="`gridjs__${uuid}`" :data-uuid="uuid" :class="`gridjs__wrapper`"></article>
-  </div>
+  <article :id="`gridjs__${uuid}`" :data-uuid="uuid" :class="`gridjs__wrapper`"></article>
 </template>
 
 <script>
