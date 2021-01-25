@@ -165,9 +165,9 @@ export default {
     // instantiate grid.js
     if (this.wrapper && (this.options.data || this.options.from || this.options.server)) {
       this.grid = new Grid(this.options).render(this.wrapper)
-      this.grid.on('rowClick', (...args) => this.$emit('onRowClick', JSON.stringify(args)));
-      this.grid.on('cellClick', (...args) => this.$emit('onCellClick', JSON.stringify(args)));
-      this.grid.on('ready', (...args) => this.$emit('onReady', JSON.stringify(args)));
+      this.grid.on('rowClick', (...args) => this.$emit('onRowClick', JSON.parse(JSON.stringify(args))))
+      this.grid.on('cellClick', (...args) => this.$emit('onCellClick', JSON.parse(JSON.stringify(args))))
+      this.grid.on('ready', (...args) => this.$emit('onReady', JSON.parse(JSON.stringify(args))))
     }
   },
   destroyed() {
