@@ -1,11 +1,19 @@
 <template>
   <div id="app">
-    <grid :cols="cols" :rows="rows" :search="true" :sort="true"></grid>
+    <grid
+      :cols="cols"
+      :rows="rows"
+      :search="true"
+      :sort="true"
+      @onRowClick="rowClick"
+      @onCellClick="cellClick"
+      @onReady="ready"
+    ></grid>
   </div>
 </template>
 
 <script>
-import Grid from '../../dist/index.js'
+import Grid from '../../dist/index.test.js'
 
 export default {
   name: 'Test',
@@ -25,6 +33,17 @@ export default {
         ['Resident', 250, 250, 0, 0, 100],
         ['Temporary', 'N/A', 23, 34, 12, 'N/A']
       ]
+    }
+  },
+  methods: {
+    rowClick(args) {
+      console.log('row:', args)
+    },
+    cellClick(args) {
+      console.log('cell:', args)
+    },
+    ready(args) {
+      console.log('ready:', args)
     }
   }
 }

@@ -4,6 +4,7 @@ import { nanoid } from 'nanoid'
 
 import Grid from './gridjs-vue.vue'
 
+
 export function install(Vue) {
   if (install.installed) return
   install.installed = true
