@@ -5,9 +5,10 @@
       :rows="rows"
       :search="true"
       :sort="true"
-      @onRowClick="rowClick"
-      @onCellClick="cellClick"
-      @onReady="ready"
+      @rowClick="rowClick"
+      @cellClick="cellClick"
+      @ready="ready"
+      ref="grid"
     ></grid>
   </div>
 </template>
@@ -19,6 +20,9 @@ export default {
   name: 'Test',
   components: {
     Grid
+  },
+  mounted() {
+    console.log(this.$refs)
   },
   data() {
     return {
