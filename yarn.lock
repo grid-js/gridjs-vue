@@ -3855,11 +3855,11 @@ graceful-fs@^4.1.2:
   integrity sha512-WjKPNJF79dtJAVniUlGGWHYGz2jWxT6VhN/4m1NdkbZ2nOsEF+cI1Edgql5zCRhs/VsQYRvrXctxktVXZUkixw==
 
 gridjs@^3.2.2:
-  version "3.2.2"
-  resolved "https://registry.yarnpkg.com/gridjs/-/gridjs-3.2.2.tgz#e2dd8a2ab83ff7289fb56514c51c9739c732ec44"
-  integrity sha512-Czqt+kBZ5WvGGydriGlAJ878HWdR/ISTr6lcJqHiRJBI+8+pP37kxwc8bggyZifHLH3NVkUcv0EyWugaAbsqQg==
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/gridjs/-/gridjs-3.4.0.tgz#f57a942e969581ee06f1bee60abcf09ddfaf0c76"
+  integrity sha512-wkRbtOblx2EXJCk4j+cgJSFB02PCyx33mIZlcyWZOmrFGbfc6ITq8vhZxaxV5jeBvtixoJ/csMTkpugVsHAlMw==
   dependencies:
-    preact "^10.5.7"
+    preact "^10.5.12"
     tslib "^2.0.1"
 
 has-ansi@^2.0.0:
@@ -5756,10 +5756,10 @@ postcss@^7.0.0, postcss@^7.0.1, postcss@^7.0.14, postcss@^7.0.16, postcss@^7.0.2
     source-map "^0.6.1"
     supports-color "^6.1.0"
 
-preact@^10.5.7:
-  version "10.5.7"
-  resolved "https://registry.yarnpkg.com/preact/-/preact-10.5.7.tgz#f1d84725539e18f7ccbea937cf3db5895661dbd3"
-  integrity sha512-4oEpz75t/0UNcwmcsjk+BIcDdk68oao+7kxcpc1hQPNs2Oo3ZL9xFz8UBf350mxk/VEdD41L5b4l2dE3Ug3RYg==
+preact@^10.5.12:
+  version "10.5.12"
+  resolved "https://registry.yarnpkg.com/preact/-/preact-10.5.12.tgz#6a8ee8bf40a695c505df9abebacd924e4dd37704"
+  integrity sha512-r6siDkuD36oszwlCkcqDJCAKBQxGoeEGytw2DGMD5A/GGdu5Tymw+N2OBXwvOLxg6d1FeY8MgMV3cc5aVQo4Cg==
 
 prelude-ls@^1.2.1:
   version "1.2.1"
