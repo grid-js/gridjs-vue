@@ -3156,13 +3156,14 @@ electron-to-chromium@^1.3.719:
   resolved "https://registry.npmjs.org/electron-to-chromium/-/electron-to-chromium-1.3.720.tgz"
   integrity sha512-B6zLTxxaOFP4WZm6DrvgRk8kLFYWNhQ5TrHMC0l5WtkMXhU5UbnvWoTfeEwqOruUSlNMhVLfYak7REX6oC5Yfw==
 
-element-ready@^5.0.0:
-  version "5.0.0"
-  resolved "https://registry.npmjs.org/element-ready/-/element-ready-5.0.0.tgz"
-  integrity sha512-eKSRBkCaYhxQgxb1Lray3pV8sstpleUTQF1vNMXXb+hu05reDhIZYQdqygBnS/M7LbvdSPZ6AwG/LYpPmlKU6A==
+element-ready@^6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/element-ready/-/element-ready-6.0.0.tgz#05a5c359df8bf916857d6d1a6d8e638f2b7b4388"
+  integrity sha512-x8Zu4XheVQjK+Vul0UCrz9FXxj+sn2HRihPvyXLTXJRgzdf6vVBQiaFaKVZNF6HWZEOPESrJSva8IAFI293Fsg==
   dependencies:
     many-keys-map "^1.0.3"
-    p-defer "^3.0.0"
+    p-defer "^4.0.0"
+    typed-query-selector "^2.4.1"
 
 emoji-regex@^7.0.1:
   version "7.0.3"
@@ -5214,10 +5215,10 @@ p-cancelable@^2.0.0:
   resolved "https://registry.npmjs.org/p-cancelable/-/p-cancelable-2.1.0.tgz"
   integrity sha512-HAZyB3ZodPo+BDpb4/Iu7Jv4P6cSazBz9ZM0ChhEXp70scx834aWCEjQRwgt41UzzejUAPdbqqONfRWTPYrPAQ==
 
-p-defer@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.npmjs.org/p-defer/-/p-defer-3.0.0.tgz"
-  integrity sha512-ugZxsxmtTln604yeYd29EGrNhazN2lywetzpKhfmQjW/VJmhpDmWbiX+h0zL8V91R0UXkhb3KtPmyq9PZw3aYw==
+p-defer@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/p-defer/-/p-defer-4.0.0.tgz#8082770aeeb10eb6b408abe91866738741ddd5d2"
+  integrity sha512-Vb3QRvQ0Y5XnF40ZUWW7JfLogicVh/EnA5gBIvKDJoYpeI82+1E3AlB9yOcKFS0AhHrWVnAQO39fbR0G99IVEQ==
 
 p-finally@^1.0.0:
   version "1.0.0"
@@ -7096,6 +7097,11 @@ type-fest@^0.8.1:
   version "0.8.1"
   resolved "https://registry.npmjs.org/type-fest/-/type-fest-0.8.1.tgz"
   integrity sha512-4dbzIzqvjtgiM5rw1k5rEHtBANKmdudhGyBEajN01fEyhaAIhsoKNy6y7+IN93IfpFtwY9iqi7kD+xwKhQsNJA==
+
+typed-query-selector@^2.4.1:
+  version "2.5.3"
+  resolved "https://registry.yarnpkg.com/typed-query-selector/-/typed-query-selector-2.5.3.tgz#85af45be833ce5f70357bc714aec7afeeaba0c6f"
+  integrity sha512-Nv84/0VsOB4U1iTqGlCAgO8fOLtzScEpIppmhdQhGk0KPtA+aPZarJHIw66t+VBfobUpOQlY0WUX/hvvwOVOxw==
 
 typedarray-to-buffer@^3.1.5:
   version "3.1.5"
