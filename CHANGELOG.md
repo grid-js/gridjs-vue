@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
-## Unreleased
+## [Unreleased]
 
 - Major update!
 - Changed semantic versioning to match version of Grid.js on which it is built to work
