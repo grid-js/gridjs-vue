@@ -20,7 +20,7 @@
   "scripts": {
     "dev": "baechli src/* -c 'yarn build'",
     "build": "rm -rf dist/*; bili src/index.mjs;",
-    "release": "release-it"
+    "release": "doppler run -- release-it"
   },
   "files": [
     "dist/*",
