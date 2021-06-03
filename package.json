@@ -1,7 +1,7 @@
 {
   "name": "gridjs-vue",
   "description": "A Vue.js wrapper component for Grid.js",
-  "version": "4.0.0",
+  "version": "0.5.2",
   "license": "MIT",
   "private": false,
   "authors": [
@@ -53,7 +53,6 @@
     "eslint-plugin-import": "^2.23.4",
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-vue": "^7.10.0",
-    "leasot": "^12.0.0",
     "prettier": "^2.3.0",
     "release-it": "^14.7.0",
     "rollup": "^2.50.5",
@@ -63,7 +62,7 @@
     "rollup-plugin-string": "^3.0.0",
     "rollup-plugin-vue": "^6.0.0",
     "typescript": "^4.3.2",
-    "vue-template-compiler": "^2.6.13",
-    "vue-runtime-helpers": "1.1.2"
+    "vue-runtime-helpers": "1.1.2",
+    "vue-template-compiler": "^2.6.13"
   }
 }

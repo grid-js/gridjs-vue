@@ -1,1 +1,0 @@
-✖ Filetype .mjs is unsupported.

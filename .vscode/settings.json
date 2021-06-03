@@ -1,0 +1,6 @@
+{
+  "deepscan.enable": true,
+  "deno.enable": false,
+  "python.pythonPath": "/usr/bin/python3",
+  "i18n-ally.localesPaths": []
+}
