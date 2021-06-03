@@ -9,18 +9,25 @@ module.exports = {
     extractCSS: false
   },
   plugins: {
+    string: {
+      include: 'node_modules/**/*.css'
+    },
     vue: {
       target: 'browser',
-      runtimeHelpers: true,
+      babelHelopers: 'runtime',
       css: true
     },
     babel: {
       presets: ['vue', ['@babel/preset-env', { useBuiltIns: 'usage', corejs: 3 }]],
-      runtimeHelpers: true,
+      plugins: ['@babel/plugin-transform-runtime'],
+      babelHelpers: 'runtime',
       exclude: 'node_modules/**',
       configFile: false
     },
     'node-resolve': true
+  },
+  resolvePlugins: {
+    string: require('rollup-plugin-string').string
   },
   external: 'crypto'
 }

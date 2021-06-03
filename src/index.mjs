@@ -1,10 +1,8 @@
-import { createRef, h, html } from 'gridjs'
-import elementReady from 'element-ready'
-import { nanoid } from 'nanoid'
+import { createRef, h, html, PluginPosition } from 'https://unpkg.com/gridjs/dist/gridjs.production.es.min.js'
+import { uid } from 'https://unpkg.com/uid/single/index.mjs'
+import Grid from './gridjs-vue.mjs'
 
-import Grid from './gridjs-vue.vue'
-
-export function install(Vue) {
+export function install(Vue, options = {}) {
   if (install.installed) return
   install.installed = true
 
@@ -12,23 +10,16 @@ export function install(Vue) {
     if (el && el.current) el = el.current
 
     if (typeof el === 'string' && usrComponent) {
-      return elementReady(el, { stopOnDomReady: false })
-        .then(() => {
-          new Vue({
-            render(createElement) {
-              return createElement(usrComponent, { props, ...opts }, this.$slots.default)
-            },
-            components: {
-              usrComponent
-            }
-          }).$mount(el)
-        })
-        .catch(err => {
-          console.error(err)
-        })
+      new Vue({
+        render(createElement) {
+          return createElement(usrComponent, { props, ...opts }, this.$slots.default)
+        },
+        components: {
+          usrComponent
+        }
+      }).$mount(el)
     } else {
       console.error('$gridjs.render() requires a target element and a component')
-      return
     }
   }
 
@@ -37,8 +28,10 @@ export function install(Vue) {
       createRef,
       h,
       html,
+      options,
+      PluginPosition,
       render,
-      uuid: nanoid
+      uuid: uid(16)
     }
   }
 

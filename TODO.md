@@ -1,3 +1,1 @@
-### TODOs
-| Filename | line # | TODO
-|:------|:------:|:------
+✖ Filetype .mjs is unsupported.
