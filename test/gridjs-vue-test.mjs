@@ -7,7 +7,7 @@ export default {
   },
   data() {
     return {
-      cols: ['Permit Type', 'Capacity', 'Issued', 'Waiting', 'Notified', '%Sold'],
+      columns: ['Permit Type', 'Capacity', 'Issued', 'Waiting', 'Notified', '%Sold'],
       rows: [
         ['Commuter', 1000, 150, 20, 10, 15],
         ['Disability', 50, 50, 0, 0, 100],
@@ -21,6 +21,6 @@ export default {
     }
   },
   template: `
-    <div><grid :cols="cols" :rows="rows" :search="true" :sort="true"></grid></div>
+    <div><grid :columns="columns" :rows="rows" :search="true" :sort="true"></grid></div>
   `
 }

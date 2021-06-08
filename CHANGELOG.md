@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
+## [Unreleased]
+
 ## [5.0.1] - 2021-06-08
 
 - Major update!

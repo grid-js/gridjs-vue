@@ -39,7 +39,7 @@ Vue.use(GridGlobal)
 
 ## Usage
 
-Pass `cols` (an array of column headers) and either `rows`, `from`, or `server` as a data source to the component. Everything else is optional. Pass in new data to update the table.
+Pass `columns` (an array of column headers) and either `rows`, `from`, or `server` as a data source to the component. Everything else is optional. Pass in new data to update the table.
 
 Refer to [Grid.js documentation](https://gridjs.io/docs/config/) for specific configuration options. This module may lag behind the main Grid.js module somewhat, so check the API version badge at the top of this README.
 
@@ -47,7 +47,7 @@ Refer to [Grid.js documentation](https://gridjs.io/docs/config/) for specific co
 
 ```html
 <template>
-  <grid :cols="cols" :rows="rows"></grid>
+  <grid :columns="columns" :rows="rows"></grid>
 </template>
 
 <script>
@@ -60,7 +60,7 @@ Refer to [Grid.js documentation](https://gridjs.io/docs/config/) for specific co
     },
     data() {
       return {
-        cols: ['Make', 'Model', 'Year', 'Color'],
+        columns: ['Make', 'Model', 'Year', 'Color'],
         rows: [
           ['Ford', 'Fusion', '2011', 'Silver'],
           ['Chevrolet', 'Cruz', '2018', 'White']
@@ -76,8 +76,8 @@ Refer to [Grid.js documentation](https://gridjs.io/docs/config/) for specific co
 ```json
 {
   "autoWidth": true,
-  "classNames": undefined,
-  "cols": [""],
+  "className": undefined,
+  "columns": [""],
   "from": undefined,
   "language": undefined,
   "pagination": false,
@@ -85,7 +85,7 @@ Refer to [Grid.js documentation](https://gridjs.io/docs/config/) for specific co
   "search": false,
   "server": undefined,
   "sort": false,
-  "styles": undefined,
+  "style": undefined,
   "theme": "mermaid",
   "width": "100%"
 }
@@ -97,8 +97,8 @@ Refer to [Grid.js documentation](https://gridjs.io/docs/config/) for specific co
 <template>
   <grid
     :auto-width="autoWidth"
-    :class-names="classNames"
-    :cols="cols"
+    :class-name="className"
+    :columns="columns"
     :from="from"
     :language="language"
     :pagination="pagination"
@@ -106,7 +106,7 @@ Refer to [Grid.js documentation](https://gridjs.io/docs/config/) for specific co
     :search="search"
     :server="server"
     :sort="sort"
-    :styles="styles"
+    :style="style"
     :width="width"
   ></grid>
 </template>
@@ -124,11 +124,10 @@ Refer to [Grid.js documentation](https://gridjs.io/docs/config/) for specific co
         // REQUIRED:
 
         // An array containing strings of column headers
-        // `columns` in the Grid.js API
-        cols: ['col 1', 'col 2'],
+        columns: ['col 1', 'col 2'],
 
         // OR an array containing objects defining column headers
-        cols: [
+        columns: [
           {
             name: 'Column 1',
             id: 'col1'
@@ -189,8 +188,7 @@ Refer to [Grid.js documentation](https://gridjs.io/docs/config/) for specific co
         autoWidth: true / false,
 
         // Object with CSS class names
-        // `className` in the Grid.js API
-        classNames: {},
+        className: {},
 
         // Localization dictionary object
         language: {},
@@ -205,11 +203,10 @@ Refer to [Grid.js documentation](https://gridjs.io/docs/config/) for specific co
         sort: true / false || {},
 
         // Object with CSS styles
-        // `style` in the Grid.js API
-        styles: {},
+        style: {},
 
         // String with name of theme or 'none' to disable
-        theme: 'mermaid',
+        theme: 'mermaid' || 'none',
 
         // String with css width value
         width: '100%',
@@ -240,7 +237,7 @@ Renders a [Preact virtual DOM instance](https://gridjs.io/docs/examples/virtual-
 Usage:
 
 ```js
-this.cols = [
+this.columns = [
   {
     name: 'Actions',
     formatter: (cell, row) => {
@@ -263,7 +260,7 @@ Renders [HTML in a formatter function](https://gridjs.io/docs/examples/html-cell
 Example:
 
 ```js
-this.cols = [
+this.columns = [
   {
     name: 'Model',
     formatter: cell => this.$gridjs.html(`<b>${cell}</b>`)
@@ -290,7 +287,7 @@ import FormatterComponent from './FormatterComponent.vue'
 
 [...]
 
-this.cols = [
+this.columns = [
   {
     name: 'Model',
     formatter: cell => {

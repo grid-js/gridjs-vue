@@ -28,11 +28,11 @@ export default {
       type: Boolean,
       default: true
     },
-    classNames: {
+    className: {
       type: Object,
       default: undefined
     },
-    cols: {
+    columns: {
       type: [Array, Function],
       default: undefined
     },
@@ -99,14 +99,14 @@ export default {
     options() {
       let options = {
         autoWidth: this.autoWidth,
-        columns: this.cols ? this.cols : [this.dict.error.columnsUndefined],
+        columns: this.columns ? this.columns : [this.dict.error.columnsUndefined],
         data: this.tabularData,
         pagination: this.pagination,
         sort: this.sort,
         width: this.width
       }
 
-      if (this.classNames) options.className = this.classNames
+      if (this.className) options.className = this.className
       if (this.from)
         options.from =
           typeof this.from === 'string'
@@ -115,7 +115,7 @@ export default {
       if (this.language) options.language = this.language
       if (this.search) options.search = this.search
       if (this.server) options.server = this.server
-      if (this.styles) options.style = this.styles
+      if (this.style) options.style = this.style
 
       return options
     },
@@ -132,10 +132,10 @@ export default {
     autoWidth() {
       this.update()
     },
-    classNames() {
+    className() {
       this.update()
     },
-    cols() {
+    columns() {
       this.update()
     },
     from() {
@@ -159,7 +159,7 @@ export default {
     sort() {
       this.update()
     },
-    styles() {
+    style() {
       this.update()
     },
     theme() {
