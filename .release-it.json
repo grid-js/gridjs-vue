@@ -8,10 +8,6 @@
     "release": true,
     "assets": ["dist/*.js"]
   },
-  "gitlab": {
-    "release": true,
-    "assets": ["dist/*.js"]
-  },
   "npm": {
     "skipChecks": true
   },

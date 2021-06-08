@@ -1,14 +1,7 @@
-<template>
-  <div id="app">
-    <grid :cols="cols" :rows="rows" :search="true" :sort="true"></grid>
-  </div>
-</template>
-
-<script>
-import Grid from '../../dist/index.js'
+import { Grid } from '../dist/index.esm.js'
 
 export default {
-  name: 'Test',
+  name: 'GridTestNoTheme',
   components: {
     Grid
   },
@@ -26,6 +19,8 @@ export default {
         ['Temporary', 'N/A', 23, 34, 12, 'N/A']
       ]
     }
-  }
+  },
+  template: `
+    <div><grid :cols="cols" :rows="rows" :search="true" :sort="true" theme="none"></grid></div>
+  `
 }
-</script>

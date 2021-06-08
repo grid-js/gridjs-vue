@@ -123,7 +123,8 @@ Refer to [Grid.js documentation](https://gridjs.io/docs/config/) for specific co
       return {
         // REQUIRED:
 
-        // An array containing strings of column headers (`columns` in the Grid.js API)
+        // An array containing strings of column headers
+        // `columns` in the Grid.js API
         cols: ['col 1', 'col 2'],
 
         // OR an array containing objects defining column headers
@@ -139,7 +140,8 @@ Refer to [Grid.js documentation](https://gridjs.io/docs/config/) for specific co
           }
         ],
 
-        // AND EITHER an array containing row data (`data` in the Grid.js API)
+        // AND EITHER an array containing row data
+        // `data` in the Grid.js API
         rows: [
           ['row 1 col 1', 'row 1 col 2'],
           ['row 2 col 1', 'row 2 col 2']
@@ -186,7 +188,8 @@ Refer to [Grid.js documentation](https://gridjs.io/docs/config/) for specific co
         // Boolean to automatically set table width
         autoWidth: true / false,
 
-        // Object with CSS class names (`className` in the Grid.js API)
+        // Object with CSS class names
+        // `className` in the Grid.js API
         classNames: {},
 
         // Localization dictionary object
@@ -196,12 +199,13 @@ Refer to [Grid.js documentation](https://gridjs.io/docs/config/) for specific co
         pagination: true / false || {},
 
         // Boolean
-        search: true / false,
+        search: true / false || {},
 
         // Boolean or sort settings object
         sort: true / false || {},
 
-        // Object with CSS styles (`style` in the Grid.js API)
+        // Object with CSS styles
+        // `style` in the Grid.js API
         styles: {},
 
         // String with name of theme or 'none' to disable
@@ -241,9 +245,10 @@ this.cols = [
     name: 'Actions',
     formatter: (cell, row) => {
       return this.$gridjs.h('button', {
-        className: 'py-2 mb-4 px-4 border rounded-md text-white bg-blue-600',
-        onClick: () => alert(`Editing "${row.cells[0].data}" "${row.cells[1].data}"`)
-      } 'Edit');
+        onClick: () => alert(`
+          Editing "${row.cells[0].data}"
+        `)
+      }, 'Edit')
     }
   },
   { ... },
