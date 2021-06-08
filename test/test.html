@@ -9,15 +9,21 @@
 
     <script type="module">
       import GridTest from './gridjs-vue-test.mjs'
+      import GridTestNoTheme from './gridjs-vue-test-no-theme.mjs'
 
       var app = new Vue({
         el: '#app',
         name: 'GridTestApp',
         components: {
-          GridTest
+          GridTest,
+          GridTestNoTheme
         },
         template: `
+        <div>
           <grid-test></grid-test>
+
+          <grid-test-no-theme></grid-test-no-theme>
+        </div>
         `
       })
     </script>

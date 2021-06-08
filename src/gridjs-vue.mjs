@@ -1,5 +1,5 @@
 import { Grid } from 'https://unpkg.com/gridjs@5.0.1/dist/gridjs.module.js'
-import { injectStyle } from 'https://unpkg.com/styl-injector@1.4.0/dist/es2015/index.js'
+import parseStylesheet from 'https://unpkg.com/parse-css-stylesheet/index.js'
 import { uid } from 'https://unpkg.com/uid/single/index.mjs'
 
 const waitForSelector = selector => {
@@ -70,7 +70,7 @@ export default {
     },
     theme: {
       type: String,
-      default: 'mermaid'
+      default: undefined
     },
     width: {
       type: String,
@@ -79,7 +79,6 @@ export default {
   },
   data() {
     return {
-      activeTheme: null,
       dict: {
         error: {
           columnsUndefined: 'Column headers are undefined',
@@ -120,6 +119,11 @@ export default {
 
       return options
     },
+    activeTheme() {
+      if (this.theme) return this.theme
+      if (this.$gridjs.options.theme) return this.$gridjs.options.theme
+      return 'mermaid'
+    },
     divId() {
       return `gridjs__${this.uuid}`
     }
@@ -158,6 +162,9 @@ export default {
     styles() {
       this.update()
     },
+    theme() {
+      this.update()
+    },
     width() {
       this.update()
     }
@@ -167,21 +174,21 @@ export default {
       // give table a unique id
       this.uuid = uid(16)
 
+      // get the wrapper
       await waitForSelector(this.divId)
       this.wrapper = document.getElementById(this.divId)
 
-      // assign styles
-      this.activeTheme = !this.theme && this.$gridjs.options.theme ? this.$gridjs.options.theme : this.theme
-      if (this.activeTheme !== 'none') this.assignTheme()
-      if (Object.keys(this.$gridjs.options).length) this.setOptions()
-
       // instantiate grid.js
+      if (Object.keys(this.$gridjs.options).length) this.setOptions()
       if (this.wrapper && (this.options.data || this.options.from || this.options.server)) {
         this.grid = new Grid(this.options).render(this.wrapper)
       }
     } catch (error) {
       console.error(error)
     }
+  },
+  mounted() {
+    this.assignTheme()
   },
   destroyed() {
     // unload from memory
@@ -191,16 +198,30 @@ export default {
   methods: {
     async assignTheme() {
       try {
-        const head = document.getElementsByTagName('head')[0]
+        if (this.activeTheme !== 'none') {
+          const head = document.getElementsByTagName('head')[0]
 
-        let styles = document.createElement('style')
-        styles.id = `${this.divId}__theme`
-        styles.type = 'text/css'
-        head.appendChild(styles)
+          let styles = document.createElement('style')
+          styles.title = `${this.divId}__theme`
+          styles.type = 'text/css'
+          head.appendChild(styles)
 
-        let theme = await fetch(`https://unpkg.com/gridjs/dist/theme/${this.activeTheme}.css`)
-        theme = await theme.text()
-        injectStyle(theme, styles.id)
+          let theme = await fetch(`https://unpkg.com/gridjs/dist/theme/${this.activeTheme}.css`)
+          theme = parseStylesheet(await theme.text())
+
+          for (let index in document.styleSheets) {
+            if (document.styleSheets[index].title === styles.title) {
+              styles = document.styleSheets[index]
+            }
+          }
+
+          for (const index in theme.cssRules) {
+            let css = theme.cssRules[index].cssText
+            if (css && !/^@/g.test(css)) {
+              styles.insertRule(`#${this.divId} ${css}`)
+            }
+          }
+        }
       } catch (error) {
         console.error(error)
       }
