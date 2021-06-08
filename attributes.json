@@ -32,7 +32,7 @@
     "description": "Array containing or function returning row data. Default: undefined"
   },
   "gridjs-vue/search": {
-    "type": "boolean",
+    "type": ["boolean", "object"],
     "description": "Boolean activating search. Default: false"
   },
   "gridjs-vue/server": {
@@ -40,7 +40,7 @@
     "description": "Server settings object or function returning object. Default: undefined"
   },
   "gridjs-vue/sort": {
-    "type": "boolean",
+    "type": ["boolean", "object"],
     "description": "Boolean activating sort on all columns. Default: false"
   },
   "gridjs-vue/styles": {
