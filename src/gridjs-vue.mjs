@@ -198,7 +198,7 @@ export default {
         styles.type = 'text/css'
         head.appendChild(styles)
 
-        let theme = await fetch(`https://unpkg.com/gridjs/dist/theme/mermaid.css`)
+        let theme = await fetch(`https://unpkg.com/gridjs/dist/theme/${this.activeTheme}.css`)
         theme = await theme.text()
         injectStyle(theme, styles.id)
       } catch (error) {
