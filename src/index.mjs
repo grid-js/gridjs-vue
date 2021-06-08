@@ -1,4 +1,4 @@
-import { createRef, h, html, PluginPosition } from 'https://unpkg.com/gridjs/dist/gridjs.production.es.min.js'
+import { createRef, h, html, PluginPosition } from 'https://unpkg.com/gridjs@5.0.1/dist/gridjs.module.js'
 import { uid } from 'https://unpkg.com/uid/single/index.mjs'
 import Grid from './gridjs-vue.mjs'
 

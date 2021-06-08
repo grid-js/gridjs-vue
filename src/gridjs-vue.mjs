@@ -1,5 +1,5 @@
-import { Grid } from 'https://unpkg.com/gridjs/dist/gridjs.production.es.min.js'
-import parseStylesheet from 'https://unpkg.com/parse-css-stylesheet/index.js'
+import { Grid } from 'https://unpkg.com/gridjs@5.0.1/dist/gridjs.module.js'
+import { injectStyle } from 'https://unpkg.com/styl-injector@1.4.0/dist/es2015/index.js'
 import { uid } from 'https://unpkg.com/uid/single/index.mjs'
 
 const waitForSelector = selector => {
@@ -194,28 +194,13 @@ export default {
         const head = document.getElementsByTagName('head')[0]
 
         let styles = document.createElement('style')
-        styles.title = `${this.divId}__theme`
+        styles.id = `${this.divId}__theme`
         styles.type = 'text/css'
         head.appendChild(styles)
 
-        for (let index in document.styleSheets) {
-          if (document.styleSheets[index].title === styles.title) {
-            styles = document.styleSheets[index]
-          }
-        }
-
-        let theme = await fetch(`https://unpkg.com/gridjs/dist/theme/${this.activeTheme}.css`)
+        let theme = await fetch(`https://unpkg.com/gridjs/dist/theme/mermaid.css`)
         theme = await theme.text()
-        theme = parseStylesheet(theme)
-
-        if (styles instanceof CSSStyleSheet) {
-          for (const index in theme.cssRules) {
-            let css = theme.cssRules[index].cssText
-            if (css && !/^@/g.test(css)) {
-              styles.insertRule(`#${this.divId} ${css}`)
-            }
-          }
-        }
+        injectStyle(theme, styles.id)
       } catch (error) {
         console.error(error)
       }
