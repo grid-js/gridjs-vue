@@ -199,7 +199,7 @@ Refer to [Grid.js documentation](https://gridjs.io/docs/config/) for specific co
         pagination: true / false || {},
 
         // Boolean
-        search: true / false,
+        search: true / false || {},
 
         // Boolean or sort settings object
         sort: true / false || {},
