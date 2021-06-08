@@ -86,6 +86,7 @@ export default {
         }
       },
       grid: null,
+      resize: null,
       uuid: null,
       wrapper: null
     }
@@ -189,11 +190,14 @@ export default {
   },
   mounted() {
     this.assignTheme()
+
+    this.resize = window.addEventListener('resize', () => this.update(), true)
   },
   destroyed() {
     // unload from memory
     this.grid = undefined
     this.wrapper = undefined
+    window.removeEventListener(this.resize)
   },
   methods: {
     async assignTheme() {
