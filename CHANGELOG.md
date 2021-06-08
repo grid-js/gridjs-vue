@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
-## [Unreleased]
+## [5.0.1] - 2021-06-08
 
 - Major update!
 - Changed semantic versioning to match version of Grid.js on which it is built to work
@@ -10,6 +10,8 @@ All notable changes to this project will be documented in this file. Dates are d
 - Dropped npm dependencies in favor of unpkg so it can be used entirely on the frontend without bundlers
 - Removed inessential dependencies and lightened the weight of others
 - Simplified the testing procedure
+
+## [4.0.0] - 2020-07-14
 
 ## [0.4.1] - 2020-07-14
 
