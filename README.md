@@ -4,7 +4,7 @@
 
 A Vue wrapper component for [Grid.js](https://gridjs.io).
 
-[![npm](https://img.shields.io/npm/v/gridjs-vue?color=41B883&label=current&style=flat-square)](https://www.npmjs.com/package/gridjs-vue) [![Grid.js API version](https://img.shields.io/github/package-json/dependency-version/grid-js/gridjs-vue/gridjs?color=41B883&label=grid.js%20api&style=flat-square)](https://gridjs.io/docs/index) ![GitHub last commit](https://img.shields.io/github/last-commit/grid-js/gridjs-vue?color=41B883&style=flat-square) [![GitHub issues](https://img.shields.io/github/issues/grid-js/gridjs-vue?color=41B883&style=flat-square)](https://github.com/grid-js/gridjs-vue/issues) [![Discord](https://img.shields.io/discord/711188165850955858?color=41B883&style=flat-square&label=discord)](https://discord.com/invite/K55BwDY)
+[![npm](https://img.shields.io/npm/v/gridjs-vue?color=41B883&label=current&style=flat-square)](https://www.npmjs.com/package/gridjs-vue) ![GitHub last commit](https://img.shields.io/github/last-commit/grid-js/gridjs-vue?color=41B883&style=flat-square) [![GitHub issues](https://img.shields.io/github/issues/grid-js/gridjs-vue?color=41B883&style=flat-square)](https://github.com/grid-js/gridjs-vue/issues) [![Discord](https://img.shields.io/discord/711188165850955858?color=41B883&style=flat-square&label=discord)](https://discord.com/invite/K55BwDY)
 
 ## Install
 
