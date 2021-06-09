@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Grid.js Vue Component Test</title>
+    <script src="https://unpkg.com/vue"></script>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <script type="module">
+      import Json from './data-source/json.mjs'
+      import Xml from './data-source/xml.mjs'
+      import FromHtmlTable from './data-source/from-html-table.mjs'
+      import ImportServerSideData from './data-source/import-server-side-data.mjs'
+      import DynamicDataImport from './data-source/dynamic-data-import.mjs'
+      import AsyncDataImport from './data-source/async-data-import.mjs'
+
+      new window.Vue({
+        el: '#app',
+        name: 'GridTestDataSource',
+        components: {
+          Json,
+          Xml,
+          FromHtmlTable,
+          ImportServerSideData,
+          DynamicDataImport,
+          AsyncDataImport
+        },
+        template: `
+          <div>
+            <div>
+              <h2>JSON</h2>
+              <json></json>
+            </div>
+
+            <div>
+              <h2>XML</h2>
+              <xml></xml>
+            </div>
+
+            <div>
+              <h2>From HTML Table</h2>
+              <from-html-table></from-html-table>
+            </div>
+
+            <div>
+              <h2>Import server-side data</h2>
+              <import-server-side-data></import-server-side-data>
+            </div>
+
+            <div>
+              <h2>Dynamic data import</h2>
+              <dynamic-data-import></dynamic-data-import>
+            </div>
+
+            <div>
+              <h2>Async data import</h2>
+              <async-data-import></async-data-import>
+            </div>
+          </div>
+        `
+      })
+    </script>
+  </body>
+</html>

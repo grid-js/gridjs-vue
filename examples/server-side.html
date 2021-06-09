@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Grid.js Vue Component Test</title>
+    <script src="https://unpkg.com/vue"></script>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <script type="module">
+      import ImportServerSideData from './server-side/import-server-side-data.mjs'
+      import ServerSideSearch from './server-side/server-side-search.mjs'
+      import ServerSidePagination from './server-side/server-side-pagination.mjs'
+      import ServerSideSorting from './server-side/server-side-sorting.mjs'
+      import CustomHttpClient from './server-side/custom-http-client.mjs'
+
+      new window.Vue({
+        el: '#app',
+        name: 'GridTestServerSide',
+        components: {
+          ImportServerSideData,
+          ServerSideSearch,
+          ServerSidePagination,
+          ServerSideSorting,
+          CustomHttpClient
+        },
+        template: `
+          <div>
+            <div>
+              <h2>Import server-side data</h2>
+              <import-server-side-data></import-server-side-data>
+            </div>
+
+            <div>
+              <h2>Server-side Search</h2>
+              <server-side-search></server-side-search>
+            </div>
+
+            <div>
+              <h2>Server-side Pagination</h2>
+              <server-side-pagination></server-side-pagination>
+            </div>
+
+            <div>
+              <h2>Server-side Sorting</h2>
+              <server-side-sorting></server-side-sorting>
+            </div>
+
+            <div>
+              <h2>Custom HTTP Client</h2>
+              <custom-http-client></custom-http-client>
+            </div>
+          </div>
+        `
+      })
+    </script>
+  </body>
+</html>
