@@ -4,7 +4,13 @@
 
 A Vue wrapper component for [Grid.js](https://gridjs.io).
 
-[![npm](https://img.shields.io/npm/v/gridjs-vue?color=41B883&label=current&style=flat-square)](https://www.npmjs.com/package/gridjs-vue) ![GitHub last commit](https://img.shields.io/github/last-commit/grid-js/gridjs-vue?color=41B883&style=flat-square) [![GitHub issues](https://img.shields.io/github/issues/grid-js/gridjs-vue?color=41B883&style=flat-square)](https://github.com/grid-js/gridjs-vue/issues) [![Discord](https://img.shields.io/discord/711188165850955858?color=41B883&style=flat-square&label=discord)](https://discord.com/invite/K55BwDY)
+[![npm](https://img.shields.io/npm/v/gridjs-vue?color=blue&label=current&style=flat-square)](https://www.npmjs.com/package/gridjs-vue)
+![Grid.js API
+version](https://img.shields.io/badge/Grid.js%20API-v5.0.1-blue?style=flat-square)
+![GitHub last commit](https://img.shields.io/github/last-commit/grid-js/gridjs-vue?color=41B883&style=flat-square)
+[![GitHub
+issues](https://img.shields.io/github/issues/grid-js/gridjs-vue?color=41B883&style=flat-square)](https://github.com/grid-js/gridjs-vue/issues)
+[![Discord](https://img.shields.io/discord/711188165850955858?color=41B883&style=flat-square&label=discord)](https://discord.com/invite/K55BwDY)
 
 ## Install
 
@@ -12,7 +18,7 @@ A Vue wrapper component for [Grid.js](https://gridjs.io).
 npm install gridjs-vue
 ```
 
-Also available on unpkg and Skypack!
+Also available on [unpkg](https://unpkg.com/browse/gridjs-vue@5.0.1/dist/) and [Skypack](https://www.skypack.dev/view/gridjs-vue)!
 
 ### Component Registration
 
@@ -49,7 +55,7 @@ Refer to [Grid.js documentation](https://gridjs.io/docs/config/) for specific co
 
 ```html
 <template>
-  <grid :columns="columns" :rows="rows" ref="myTable" @ready="myMethod"></grid>
+  <grid :columns="columns" :rows="rows" @ready="myMethod"></grid>
 </template>
 
 <script>
@@ -247,30 +253,36 @@ Simplifies use of Vue components in table formatters.
 Usage:
 
 ```js
-const components = { MyComponent }
-const template = `<my-component :content="content"></my-component>`
-const data = {
-  content: '🥳'
-}
-
-this.$gridjs.helper(components, template, data)
-```
-
-Example:
-
-```js
 export default {
+  components: {
+    Grid
+  },
   data() {
     return {
       columns: [
         {
           name: 'Name',
           formatter: cell =>
-            this.$gridjs.helper({ MyComponent }, `<my-component :content="content"></my-component>`, { content: cell })
-        }
-      ]
+            this.$gridjs.helper({
+              components: { TestComponent },
+              template: `<test-component :content="content"></test-component>`,
+              data() {
+                return {
+                  content: `🥳 ${cell}`
+                }
+              }
+            })
+        },
+        'Email'
+      ],
+      rows: Array(5)
+        .fill()
+        .map(() => [faker.name.findName(), faker.internet.email()])
     }
-  }
+  },
+  template: `
+    <div><grid :columns="columns" :rows="rows"></grid></div>
+  `
 }
 ```
 
@@ -291,7 +303,7 @@ this.columns = [
 
 #### \$gridjs.h
 
-Renders a [Preact virtual DOM instance](https://gridjs.io/docs/examples/virtual-dom). Grid.js is built in Preact, so why not take advantage of it?
+Grid.js is built in Preact, so why not take advantage of it? Renders a [Preact virtual DOM instance](https://gridjs.io/docs/examples/virtual-dom).
 
 Usage:
 
@@ -314,6 +326,10 @@ this.columns = [
   }
 ]
 ```
+
+## Examples
+
+Be sure to check out the [`examples` folder](https://github.com/grid-js/gridjs-vue), where you'll find a Vue implementation of each example on the Grid.js website.
 
 ## 🤝 Contributing
 

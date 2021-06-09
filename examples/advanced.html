@@ -15,6 +15,7 @@
       import CustomSort from './advanced/custom-sort.mjs'
       import StockMarket from './advanced/stock-market.mjs'
       import Events from './advanced/events.mjs'
+      import VueEvents from './advanced/vue-events.mjs'
 
       new window.Vue({
         el: '#app',
@@ -26,7 +27,8 @@
           MultiColumnSort,
           CustomSort,
           StockMarket,
-          Events
+          Events,
+          VueEvents
         },
         template: `
           <div>
@@ -64,6 +66,11 @@
             <div>
               <h2>Events</h2>
               <events></events>
+            </div>
+
+            <div>
+              <h2>Vue Events</h2>
+              <vue-events></vue-events>
             </div>
           </div>
         `

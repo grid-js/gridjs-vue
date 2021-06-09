@@ -7,7 +7,7 @@ export function install(Vue, options = {}) {
   if (install.installed) return
   install.installed = true
 
-  const helper = (components, template, data) => {
+  const helper = vueConfig => {
     const uuid = uid(16)
     const tie = new Necktie()
     tie.startListening()
@@ -17,11 +17,7 @@ export function install(Vue, options = {}) {
       el =>
         new Vue({
           el,
-          components,
-          data() {
-            return { ...data }
-          },
-          template
+          ...vueConfig
         })
     )
 

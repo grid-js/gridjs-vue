@@ -3,7 +3,7 @@ import { Grid } from '../../dist/index.esm.js'
 import TestComponent from '../test-component.mjs'
 
 export default {
-  name: 'VueComponentInCells',
+  name: 'VueEvents',
   components: {
     Grid
   },
@@ -12,16 +12,22 @@ export default {
       columns: [
         {
           name: 'Name',
-          formatter: cell =>
-            this.$gridjs.helper({
+          formatter: cell => {
+            return this.$gridjs.helper({
               components: { TestComponent },
-              template: `<test-component :content="content"></test-component>`,
+              template: `<test-component :content="content" @sayHello="hello"></test-component>`,
               data() {
                 return {
                   content: `🥳 ${cell}`
                 }
+              },
+              methods: {
+                hello() {
+                  console.log('Hello!')
+                }
               }
             })
+          }
         },
         'Email'
       ],

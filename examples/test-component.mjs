@@ -13,7 +13,7 @@ export default {
   },
   template: `
     <div>
-      <div :style="styling" v-html="content"></div>
+      <div :style="styling" v-html="content" @click="$emit('sayHello')"></div>
     </div>
   `
 }
