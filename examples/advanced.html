@@ -16,6 +16,7 @@
       import StockMarket from './advanced/stock-market.mjs'
       import Events from './advanced/events.mjs'
       import VueEvents from './advanced/vue-events.mjs'
+      import GlobalEventBus from './advanced/global-event-bus.mjs'
 
       new window.Vue({
         el: '#app',
@@ -28,7 +29,8 @@
           CustomSort,
           StockMarket,
           Events,
-          VueEvents
+          VueEvents,
+          GlobalEventBus
         },
         template: `
           <div>
@@ -71,6 +73,11 @@
             <div>
               <h2>Vue Events</h2>
               <vue-events></vue-events>
+            </div>
+
+            <div>
+              <h2>Global Event Bus</h2>
+              <global-event-bus></global-event-bus>
             </div>
           </div>
         `

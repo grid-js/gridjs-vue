@@ -69,6 +69,7 @@ functionality in Vue using this component. These examples mirror those found in 
 - [Stock Market](../examples/advanced/stock-market.mjs)
 - [Events](../examples/advanced/events.mjs)
 - [Vue Events](../examples/advanced/vue-events.mjs)
+- [Global Event Bus](../examples/advanced/global-event-bus.mjs)
 
 [Preview](../examples/advanced.html)
 
