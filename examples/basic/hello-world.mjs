@@ -14,7 +14,12 @@ export default {
       ]
     }
   },
+  methods: {
+    log(text) {
+      console.log(text)
+    }
+  },
   template: `
-    <div><grid :columns="columns" :rows="rows"></grid></div>
+    <div><grid :columns="columns" :rows="rows" @ready="log('Hi to you too!')"></grid></div>
   `
 }

@@ -49,7 +49,7 @@ Refer to [Grid.js documentation](https://gridjs.io/docs/config/) for specific co
 
 ```html
 <template>
-  <grid :columns="columns" :rows="rows" ref="myTable"></grid>
+  <grid :columns="columns" :rows="rows" ref="myTable" @ready="myMethod"></grid>
 </template>
 
 <script>
@@ -67,6 +67,11 @@ Refer to [Grid.js documentation](https://gridjs.io/docs/config/) for specific co
           ['Ford', 'Fusion', '2011', 'Silver'],
           ['Chevrolet', 'Cruz', '2018', 'White']
         ]
+      }
+    },
+    methods: {
+      myMethod() {
+        console.log("It's ready!")
       }
     }
   }

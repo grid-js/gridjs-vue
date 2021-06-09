@@ -204,8 +204,8 @@ export default {
   },
   mounted() {
     this.assignTheme()
-
     this.resize = window.addEventListener('resize', () => this.update(), true)
+    this.$nextTick(() => this.$emit('ready'))
   },
   destroyed() {
     // unload from memory
