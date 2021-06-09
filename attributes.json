@@ -5,11 +5,15 @@
   },
   "gridjs-vue/classNames": {
     "type": "object",
-    "description": "Object containing CSS class names. Default: undefined"
+    "description": "Object containing CSS class definitions. Default: undefined"
   },
-  "gridjs-vue/cols": {
+  "gridjs-vue/columns": {
     "type": "array",
     "description": "Array containing strings of column headers. Default: undefined"
+  },
+  "gridjs-vue/fixedHeader": {
+    "type": "boolean",
+    "description": "Boolean to fix position of table header. Default: false"
   },
   "gridjs-vue/from": {
     "type": ["string", "function"],
@@ -26,6 +30,10 @@
   "gridjs-vue/pagination": {
     "type": ["boolean", "object"],
     "description": "Boolean or pagination settings object. Default: true"
+  },
+  "gridjs-vue/resizable": {
+    "type": "boolean",
+    "description": "Boolean activating resizable columns. Default: false"
   },
   "gridjs-vue/rows": {
     "type": ["array", "function"],

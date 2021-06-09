@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Grid.js Vue Component Test</title>
+    <script src="https://unpkg.com/vue"></script>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <script type="module">
+      import CssStyle from './styling/css-style.mjs'
+      import CssClassName from './styling/css-class-name.mjs'
+      import CssInJs from './styling/css-in-js.mjs'
+
+      new window.Vue({
+        el: '#app',
+        name: 'GridTestStyling',
+        components: {
+          CssStyle,
+          CssClassName,
+          CssInJs
+        },
+        template: `
+          <div>
+            <div>
+              <h2>CSS Style</h2>
+              <css-style></css-style>
+            </div>
+
+            <div>
+              <h2>CSS ClassName</h2>
+              <css-class-name></css-class-name>
+            </div>
+
+            <div>
+              <h2>CSS-in-JS</h2>
+              <css-in-js></css-in-js>
+            </div>
+          </div>
+        `
+      })
+    </script>
+  </body>
+</html>

@@ -1,6 +1,7 @@
+import parseStylesheet from 'https://cdn.skypack.dev/parse-css-stylesheet'
+import { injectStyle } from 'https://cdn.skypack.dev/styl-injector'
+import { uid } from 'https://cdn.skypack.dev/uid'
 import { Grid } from 'https://unpkg.com/gridjs@5.0.1/dist/gridjs.module.js'
-import parseStylesheet from 'https://unpkg.com/parse-css-stylesheet/index.js'
-import { uid } from 'https://unpkg.com/uid/single/index.mjs'
 
 const waitForSelector = selector => {
   const element = document.querySelector(selector)
@@ -36,8 +37,16 @@ export default {
       type: [Array, Function],
       default: undefined
     },
+    fixedHeader: {
+      type: Boolean,
+      default: false
+    },
     from: {
       type: [String, Function],
+      default: undefined
+    },
+    height: {
+      type: String,
       default: undefined
     },
     language: {
@@ -46,6 +55,10 @@ export default {
     },
     pagination: {
       type: [Object, Boolean],
+      default: false
+    },
+    resizable: {
+      type: Boolean,
       default: false
     },
     rows: {
@@ -79,12 +92,6 @@ export default {
   },
   data() {
     return {
-      dict: {
-        error: {
-          columnsUndefined: 'Column headers are undefined',
-          rowsUndefined: 'No data to display'
-        }
-      },
       grid: null,
       resize: null,
       uuid: null,
@@ -92,31 +99,29 @@ export default {
     }
   },
   computed: {
-    tabularData() {
-      if (this.rows) return this.rows
-      if (this.from || this.server) return undefined
-      return [[this.dict.error.rowsUndefined]]
-    },
     options() {
       let options = {
         autoWidth: this.autoWidth,
-        columns: this.columns ? this.columns : [this.dict.error.columnsUndefined],
-        data: this.tabularData,
+        fixedHeader: this.fixedHeader,
         pagination: this.pagination,
+        resizable: this.resizable,
         sort: this.sort,
         width: this.width
       }
 
+      if (this.columns) options.columns = this.columns
+      if (this.rows) options.data = this.rows
       if (this.className) options.className = this.className
       if (this.from)
         options.from =
           typeof this.from === 'string'
             ? document.querySelector(this.from)
             : document.createRange().createContextualFragment(this.from())
+      if (this.height) options.height = this.height
       if (this.language) options.language = this.language
       if (this.search) options.search = this.search
       if (this.server) options.server = this.server
-      if (this.style) options.style = this.style
+      if (this.styles) options.style = this.styles
 
       return options
     },
@@ -139,13 +144,22 @@ export default {
     columns() {
       this.update()
     },
+    fixedHeader() {
+      this.update()
+    },
     from() {
+      this.update()
+    },
+    height() {
       this.update()
     },
     language() {
       this.update()
     },
     pagination() {
+      this.update()
+    },
+    resizable() {
       this.update()
     },
     rows() {
@@ -219,12 +233,16 @@ export default {
             }
           }
 
+          let stylesheet = ''
+
           for (const index in theme.cssRules) {
             let css = theme.cssRules[index].cssText
             if (css && !/^@/g.test(css)) {
-              styles.insertRule(`#${this.divId} ${css}`)
+              stylesheet = `${stylesheet}\n\n#${this.divId} ${css}`
             }
           }
+
+          injectStyle(stylesheet, `${this.divId}_styles`)
         }
       } catch (error) {
         console.error(error)
@@ -251,6 +269,6 @@ export default {
     }
   },
   template: `
-    <article :id="divId" :data-uuid="uuid" class="gridjs__wrapper"></article>
+    <article :id="divId" :data-uuid="uuid"></article>
   `
 }

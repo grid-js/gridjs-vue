@@ -4,16 +4,11 @@ module.exports = {
     browser: true,
     node: true
   },
-  extends: [
-    'plugin:vue/essential',
-    'eslint:recommended',
-    '@vue/prettier',
-    'plugin:import/errors',
-    'plugin:import/warnings'
-  ],
+  extends: ['plugin:vue/recommended', 'eslint:recommended', 'plugin:import/errors', 'plugin:import/warnings'],
   parserOptions: {
     parser: 'babel-eslint'
   },
+  plugins: ['html'],
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',

@@ -8,5 +8,5 @@
       "@@/*": ["./*"]
     }
   },
-  "exclude": ["node_modules", "test", "public", "dist"]
+  "exclude": ["node_modules", "test", "public", "dist", "examples"]
 }

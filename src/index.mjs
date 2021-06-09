@@ -1,37 +1,40 @@
-import { createRef, h, html, PluginPosition } from 'https://unpkg.com/gridjs@5.0.1/dist/gridjs.module.js'
-import { uid } from 'https://unpkg.com/uid/single/index.mjs'
+import { Necktie } from 'https://cdn.skypack.dev/@lesniewski.pro/necktie'
+import { uid } from 'https://cdn.skypack.dev/uid'
+import { h, html, PluginPosition } from 'https://unpkg.com/gridjs@5.0.1/dist/gridjs.module.js'
 import Grid from './gridjs-vue.mjs'
 
 export function install(Vue, options = {}) {
   if (install.installed) return
   install.installed = true
 
-  const render = (el, usrComponent, props, opts) => {
-    if (el && el.current) el = el.current
+  const helper = (components, template, data) => {
+    const uuid = uid(16)
+    const tie = new Necktie()
+    tie.startListening()
 
-    if (typeof el === 'string' && usrComponent) {
-      new Vue({
-        render(createElement) {
-          return createElement(usrComponent, { props, ...opts }, this.$slots.default)
-        },
-        components: {
-          usrComponent
-        }
-      }).$mount(el)
-    } else {
-      console.error('$gridjs.render() requires a target element and a component')
-    }
+    tie.bind(
+      `[data-obj-id='${uuid}']`,
+      el =>
+        new Vue({
+          el,
+          components,
+          data() {
+            return { ...data }
+          },
+          template
+        })
+    )
+
+    return html(`<span data-obj-id=${uuid}></span>`)
   }
 
   if (!Vue.prototype.$gridjs) {
     Vue.prototype.$gridjs = {
-      createRef,
       h,
+      helper,
       html,
       options,
-      PluginPosition,
-      render,
-      uuid: uid(16)
+      PluginPosition
     }
   }
 

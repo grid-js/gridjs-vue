@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Grid.js Vue Component Test</title>
+    <script src="https://unpkg.com/vue"></script>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <script type="module">
+      import CellFormatting from './customizing/cell-formatting.mjs'
+      import CellAttributes from './customizing/cell-attributes.mjs'
+      import RowButtons from './customizing/row-buttons.mjs'
+      import HtmlInCells from './customizing/html-in-cells.mjs'
+      import HtmlInHeaderCells from './customizing/html-in-header-cells.mjs'
+      import VueComponentInCells from './customizing/vue-component-in-cells.mjs'
+
+      new window.Vue({
+        el: '#app',
+        name: 'GridTestCustomizing',
+        components: {
+          CellFormatting,
+          CellAttributes,
+          RowButtons,
+          HtmlInCells,
+          HtmlInHeaderCells,
+          VueComponentInCells
+        },
+        template: `
+          <div>
+            <div>
+              <h2>Cell Formatting</h2>
+              <cell-formatting></cell-formatting>
+            </div>
+
+            <div>
+              <h2>Cell Attributes</h2>
+              <cell-attributes></cell-attributes>
+            </div>
+
+            <div>
+              <h2>Row Buttons</h2>
+              <row-buttons></row-buttons>
+            </div>
+
+            <div>
+              <h2>HTML in Cells</h2>
+              <html-in-cells></html-in-cells>
+            </div>
+
+            <div>
+              <h2>HTML in Header Cells</h2>
+              <html-in-header-cells></html-in-header-cells>
+            </div>
+
+            <div>
+              <h2>Vue Component in Cells</h2>
+              <vue-component-in-cells></vue-component-in-cells>
+            </div>
+          </div>
+        `
+      })
+    </script>
+  </body>
+</html>

@@ -12,6 +12,8 @@ A Vue wrapper component for [Grid.js](https://gridjs.io).
 npm install gridjs-vue
 ```
 
+Also available on unpkg and Skypack!
+
 ### Component Registration
 
 #### Local Registration
@@ -47,7 +49,7 @@ Refer to [Grid.js documentation](https://gridjs.io/docs/config/) for specific co
 
 ```html
 <template>
-  <grid :columns="columns" :rows="rows"></grid>
+  <grid :columns="columns" :rows="rows" ref="myTable"></grid>
 </template>
 
 <script>
@@ -78,9 +80,12 @@ Refer to [Grid.js documentation](https://gridjs.io/docs/config/) for specific co
   "autoWidth": true,
   "className": undefined,
   "columns": [""],
+  "fixedHeader": false,
   "from": undefined,
+  "height": undefined,
   "language": undefined,
   "pagination": false,
+  "resizable": true,
   "rows": undefined,
   "search": false,
   "server": undefined,
@@ -99,9 +104,12 @@ Refer to [Grid.js documentation](https://gridjs.io/docs/config/) for specific co
     :auto-width="autoWidth"
     :class-name="className"
     :columns="columns"
+    :fixed-header="fixedHeader"
     :from="from"
+    :height="height"
     :language="language"
     :pagination="pagination"
+    :resizable="resizable"
     :rows="rows"
     :search="search"
     :server="server"
@@ -187,28 +195,37 @@ Refer to [Grid.js documentation](https://gridjs.io/docs/config/) for specific co
         // Boolean to automatically set table width
         autoWidth: true / false,
 
-        // Object with CSS class names
+        // Object with CSS class definitions (see Grid.js API)
         className: {},
 
-        // Localization dictionary object
+        // Boolean to fix positioning of table header
+        fixedHeader: true / false,
+
+        // CSS string setting explicit table height
+        height: '500px',
+
+        // Localization dictionary object (see Grid.js API)
         language: {},
 
         // Boolean or pagination settings object
         pagination: true / false || {},
 
-        // Boolean
+        // Boolean to enable column resizing
+        resizable: true / false || {}
+
+        // Boolean to enable search bar
         search: true / false || {},
 
         // Boolean or sort settings object
         sort: true / false || {},
 
-        // Object with CSS styles
-        style: {},
+        // Object with CSS styles (see Grid.js API)
+        styles: {},
 
         // String with name of theme or 'none' to disable
         theme: 'mermaid' || 'none',
 
-        // String with css width value
+        // CSS string setting explicit table width
         width: '100%',
       }
     }
@@ -218,39 +235,38 @@ Refer to [Grid.js documentation](https://gridjs.io/docs/config/) for specific co
 
 ### Helper Functions
 
-If you install the component globally, rather than importing it locally, the following helpers are added to the Vue prototype and are available globally.
+#### \$gridjs.helper
 
-#### \$gridjs.uuid
-
-Returns a unique identifier that can be used to reference the current cell.
+Simplifies use of Vue components in table formatters.
 
 Usage:
 
 ```js
-const ref = this.$gridjs.uuid()
+const components = { MyComponent }
+const template = `<my-component :content="content"></my-component>`
+const data = {
+  content: '🥳'
+}
+
+this.$gridjs.helper(components, template, data)
 ```
 
-#### \$gridjs.h
-
-Renders a [Preact virtual DOM instance](https://gridjs.io/docs/examples/virtual-dom). Grid.js is built in Preact, so why not take advantage of it?
-
-Usage:
+Example:
 
 ```js
-this.columns = [
-  {
-    name: 'Actions',
-    formatter: (cell, row) => {
-      return this.$gridjs.h('button', {
-        onClick: () => alert(`
-          Editing "${row.cells[0].data}"
-        `)
-      }, 'Edit')
+export default {
+  data() {
+    return {
+      columns: [
+        {
+          name: 'Name',
+          formatter: cell =>
+            this.$gridjs.helper({ MyComponent }, `<my-component :content="content"></my-component>`, { content: cell })
+        }
+      ]
     }
-  },
-  { ... },
-  { ... }
-]
+  }
+}
 ```
 
 #### \$gridjs.html
@@ -264,47 +280,33 @@ this.columns = [
   {
     name: 'Model',
     formatter: cell => this.$gridjs.html(`<b>${cell}</b>`)
-  },
-  { ... },
-  { ... }
+  }
 ]
 ```
 
-#### \$gridjs.render
+#### \$gridjs.h
 
-Renders a Vue component. Refer to [Vue documentation](https://vuejs.org/v2/guide/render-function.html#createElement-Arguments) for advanced options.
+Renders a [Preact virtual DOM instance](https://gridjs.io/docs/examples/virtual-dom). Grid.js is built in Preact, so why not take advantage of it?
 
 Usage:
 
 ```js
-this.$gridjs.render(ref, component, { props }, { options })
-```
-
-Example:
-
-```js
-import FormatterComponent from './FormatterComponent.vue'
-
-[...]
-
 this.columns = [
   {
-    name: 'Model',
-    formatter: cell => {
-      const current = this.$gridjs.uuid()
-      this.$gridjs.render(
-        `[data-ref="${current}"]`,
-        FormatterComponent,
+    name: 'Actions',
+    formatter: (cell, row) => {
+      return this.$gridjs.h(
+        'button',
         {
-          content: cell,
-          otherProp: true
-        }
+          onClick: () =>
+            alert(`
+          Editing "${row.cells[0].data}"
+        `)
+        },
+        'Edit'
       )
-      return this.$gridjs.html(`<div data-ref="${current}"></div>`)
     }
-  },
-  { ... },
-  { ... }
+  }
 ]
 ```
 

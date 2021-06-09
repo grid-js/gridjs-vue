@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Grid.js Vue Component Test</title>
+    <script src="https://unpkg.com/vue"></script>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <script type="module">
+      import HelloWorld from './basic/hello-world.mjs'
+      import AutoUpdate from './basic/auto-update.mjs'
+      import FromHtmlTable from './basic/from-html-table.mjs'
+      import Pagination from './basic/pagination.mjs'
+      import Search from './basic/search.mjs'
+      import Sorting from './basic/sorting.mjs'
+      import Resizable from './basic/resizable.mjs'
+      import LoadingState from './basic/loading-state.mjs'
+      import WideTable from './basic/wide-table.mjs'
+      import FixedHeader from './basic/fixed-header.mjs'
+      import HiddenColumns from './basic/hidden-columns.mjs'
+
+      new window.Vue({
+        el: '#app',
+        name: 'GridTestBasic',
+        components: {
+          HelloWorld,
+          AutoUpdate,
+          FromHtmlTable,
+          Pagination,
+          Search,
+          Sorting,
+          Resizable,
+          LoadingState,
+          WideTable,
+          FixedHeader,
+          HiddenColumns
+        },
+        template: `
+          <div>
+            <div>
+              <h2>Hello, World!</h2>
+              <hello-world></hello-world>
+            </div>
+
+            <div>
+              <h2>Auto-update</h2>
+              <auto-update></auto-update>
+            </div>
+
+            <div>
+              <h2>From HTML Table</h2>
+              <from-html-table></from-html-table>
+            </div>
+
+            <div>
+              <h2>Pagination</h2>
+              <pagination></pagination>
+            </div>
+
+            <div>
+              <h2>Search</h2>
+              <search></search>
+            </div>
+
+            <div>
+              <h2>Sorting</h2>
+              <sorting></sorting>
+            </div>
+
+            <div>
+              <h2>Resizable Columns</h2>
+              <resizable></resizable>
+            </div>
+
+            <div>
+              <h2>Loading State</h2>
+              <loading-state></loading-state>
+            </div>
+
+            <div>
+              <h2>Wide Table</h2>
+              <wide-table></wide-table>
+            </div>
+
+            <div>
+              <h2>Fixed Header</h2>
+              <fixed-header></fixed-header>
+            </div>
+
+            <div>
+              <h2>Hidden Columns</h2>
+              <hidden-columns></hidden-columns>
+            </div>
+          </div>
+        `
+      })
+    </script>
+  </body>
+</html>
