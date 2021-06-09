@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file. Dates are d
 
 ## [Unreleased]
 
+- All new documentation af3db2b
+- Update README.md 40da820
+- update devdeps 17626e7
+- Rework new helper function f2cf99b
+- Add ready event f88802d
+- To the moon and back a5d40d7
+- Update table on window resize ea93940
+- Change attribute names to match GridJS API 995c66b
+- Update attributes.json abdaa15
+
 ## [5.0.1] - 2021-06-08
 
 - Major update!
