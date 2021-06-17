@@ -1,3 +1,4 @@
+import { ResizeObserver as ROPolyfill, unbind } from 'https://cdn.skypack.dev/@juggle/resize-observer'
 import parseStylesheet from 'https://cdn.skypack.dev/parse-css-stylesheet'
 import { injectStyle } from 'https://cdn.skypack.dev/styl-injector'
 import { uid } from 'https://cdn.skypack.dev/uid'
@@ -204,14 +205,18 @@ export default {
   },
   mounted() {
     this.assignTheme()
-    this.resize = window.addEventListener('resize', () => this.update(), true)
+    const ResizeObserver = window.ResizeObserver || ROPolyfill
+    const resize = new ResizeObserver(() => {
+      this.rerender()
+    })
+    resize(this.grid)
     this.$nextTick(() => this.$emit('ready'))
   },
   destroyed() {
     // unload from memory
+    unbind(this.resize)
     this.grid = undefined
     this.wrapper = undefined
-    window.removeEventListener(this.resize)
   },
   methods: {
     async assignTheme() {
@@ -259,6 +264,9 @@ export default {
       } catch (error) {
         console.error(error)
       }
+    },
+    rerender() {
+      if (this.grid) this.grid.forceRender()
     },
     update() {
       try {
