@@ -18,11 +18,11 @@ issues](https://img.shields.io/github/issues/grid-js/gridjs-vue?color=41B883&sty
 npm install gridjs-vue
 ```
 
-Also available on [unpkg](https://unpkg.com/browse/gridjs-vue@5.0.1/dist/) and [Skypack](https://www.skypack.dev/view/gridjs-vue)!
+Also available on [unpkg](https://unpkg.com/browse/gridjs-vue/dist/) and [Skypack](https://www.skypack.dev/view/gridjs-vue)!
 
 ```html
 <script>
-  import Grid from 'gridjs-vue'
+  import { Grid } from 'gridjs-vue'
 
   export default {
     components: {

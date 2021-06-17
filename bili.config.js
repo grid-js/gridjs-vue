@@ -1,9 +1,9 @@
 module.exports = {
   jsCompiler: 'babel',
-  input: 'src/index.js',
+  input: ['src/index.browser.mjs', 'src/index.mjs'],
+  bundleNodeModules: true,
   output: {
     format: ['cjs', 'esm', 'umd'],
-    bundleNodeModules: true,
     minify: true,
     moduleName: 'Grid',
     extractCSS: false
@@ -13,15 +13,12 @@ module.exports = {
       include: 'node_modules/**/*.css'
     },
     vue: {
-      target: 'browser',
-      babelHelopers: 'runtime',
-      css: true
+      target: 'browser'
     },
     babel: {
       presets: ['vue', ['@babel/preset-env', { useBuiltIns: 'usage', corejs: 3 }]],
       plugins: ['@babel/plugin-transform-runtime'],
       babelHelpers: 'runtime',
-      exclude: 'node_modules/**',
       configFile: false
     },
     'node-resolve': true
