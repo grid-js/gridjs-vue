@@ -13,7 +13,7 @@ export default {
         {
           name: 'Name',
           formatter: cell =>
-            return this.$gridjs.helper({
+            this.$gridjs.helper({
               components: { TestComponent },
               template: `<test-component :content="content"></test-component>`,
               data() {

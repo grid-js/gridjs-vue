@@ -1,9 +1,8 @@
-import { ResizeObserver as Polyfill } from '@juggle/resize-observer'
-import { Grid } from 'gridjs/dist/gridjs.module.js'
-import mermaid from 'gridjs/dist/theme/mermaid.css'
-import parseStylesheet from 'parse-css-stylesheet'
-import { injectStyle } from 'styl-injector'
-import { uid } from 'uid'
+import { ResizeObserver as Polyfill } from 'https://cdn.skypack.dev/@juggle/resize-observer'
+import parseStylesheet from 'https://cdn.skypack.dev/parse-css-stylesheet'
+import { injectStyle } from 'https://cdn.skypack.dev/styl-injector'
+import { uid } from 'https://cdn.skypack.dev/uid'
+import { Grid } from 'https://unpkg.com/gridjs@5.0.1/dist/gridjs.module.js'
 
 const waitForSelector = selector => {
   const element = document.querySelector(selector)
@@ -226,11 +225,8 @@ export default {
           let theme,
             stylesheet = ''
 
-          theme = parseStylesheet(
-            this.activeTheme === 'mermaid'
-              ? mermaid.match(/= "(.*?)";/)[1].replace(/\\n/g, '')
-              : await (await fetch(`https://unpkg.com/gridjs/dist/theme/${this.activeTheme}.css`)).text()
-          )
+          theme = await (await fetch(`https://unpkg.com/gridjs/dist/theme/${this.activeTheme}.css`)).text()
+          theme = parseStylesheet(theme)
 
           for (const index in theme.cssRules) {
             let css = theme.cssRules[index].cssText

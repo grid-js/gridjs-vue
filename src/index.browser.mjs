@@ -1,7 +1,7 @@
-import { Necktie } from '@lesniewski.pro/necktie'
-import { h, html, PluginPosition } from 'gridjs/dist/gridjs.module.js'
-import { uid } from 'uid'
-import Grid from './gridjs-vue.mjs'
+import { Necktie } from 'https://cdn.skypack.dev/@lesniewski.pro/necktie'
+import { uid } from 'https://cdn.skypack.dev/uid'
+import { h, html, PluginPosition } from 'https://unpkg.com/gridjs@5.0.1/dist/gridjs.module.js'
+import Grid from './gridjs-vue.browser.mjs'
 
 export function install(Vue, options = {}) {
   if (install.installed) return
