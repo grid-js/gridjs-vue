@@ -1,4 +1,4 @@
-import { Grid } from '../../dist/index.esm.js'
+import { Grid } from '../../dist/main.esm.js'
 
 export default {
   name: 'CssStyle',
@@ -17,10 +17,10 @@ export default {
       ],
       styles: {
         table: {
-          border: '3px solid #ccc'
+          border: '8px solid #ccc'
         },
         th: {
-          'background-color': 'rgba(0, 0, 0, 0.1)',
+          'background-color': 'rgba(81, 212, 0, 0.5)',
           color: '#000',
           'border-bottom': '3px solid #ccc',
           'text-align': 'center'

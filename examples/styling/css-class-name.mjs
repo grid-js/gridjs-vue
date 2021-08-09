@@ -1,4 +1,4 @@
-import { Grid } from '../../dist/index.esm.js'
+import { Grid } from '../../dist/main.esm.js'
 
 export default {
   name: 'CssClassName',
@@ -22,6 +22,8 @@ export default {
     }
   },
   template: `
-    <div><grid :columns="columns" :rows="rows" :className="className"></grid></div>
+    <div>
+      <grid :columns="columns" :rows="rows" :className="className"></grid>
+    </div>
   `
 }

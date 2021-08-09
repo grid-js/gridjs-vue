@@ -1,7 +1,7 @@
 {
   "name": "gridjs-vue",
   "description": "A Vue.js wrapper component for Grid.js",
-  "version": "5.0.2-3",
+  "version": "5.0.2-4",
   "license": "MIT",
   "private": false,
   "authors": [
@@ -21,18 +21,15 @@
     "vue",
     "vue-component"
   ],
-  "main": "./dist/index.esm.js",
-  "umd": "./dist/index.umd.js",
-  "module": "./dist/index.browser.esm.js",
+  "main": "./dist/main.esm.js",
+  "umd": "./dist/main.umd.js",
   "exports": {
-    "require": "./dist/index.js",
-    "import": "./dist/index.esm.js",
-    "default": "./dist/index.esm.js",
-    "browser": "./dist/index.browser.esm.js"
+    "require": "./dist/main.js",
+    "import": "./dist/main.esm.js",
+    "default": "./dist/main.esm.js"
   },
   "scripts": {
-    "dev": "baechli -c 'yarn build'",
-    "build": "rm -rf dist/*; bili;"
+    "build": "tsc; bili"
   },
   "files": [
     "dist/*",
@@ -45,40 +42,28 @@
     "attributes": "attributes.json"
   },
   "devDependencies": {
-    "@babel/core": "^7.14.3",
-    "@babel/plugin-transform-runtime": "^7.14.3",
-    "@babel/preset-env": "^7.14.4",
     "@juggle/resize-observer": "^3.3.1",
     "@lesniewski.pro/necktie": "^1.1.3",
-    "@release-it/keep-a-changelog": "^2.3.0",
-    "@vue/compiler-sfc": "^3.1.1",
+    "@types/node": "^16.4.13",
+    "@typescript-eslint/eslint-plugin": "^4.29.0",
+    "@typescript-eslint/parser": "^4.29.0",
+    "@vue/compiler-sfc": "^3.1.5",
     "@vue/eslint-config-prettier": "^6.0.0",
-    "babel-eslint": "^10.1.0",
-    "babel-preset-vue": "^2.0.2",
-    "baechli": "^0.1.5",
     "bili": "^5.0.5",
-    "bili-babel": "^0.2.0",
-    "core-js": "^3.14.0",
-    "cross-env": "^7.0.3",
-    "eslint": "^7.28.0",
+    "eslint": "^7.32.0",
     "eslint-plugin-html": "^6.1.2",
     "eslint-plugin-import": "^2.23.4",
     "eslint-plugin-prettier": "^3.4.0",
-    "eslint-plugin-vue": "^7.10.0",
-    "gridjs": "5.0.1",
-    "parse-css-stylesheet": "^0.0.1",
-    "prettier": "^2.3.1",
-    "rollup": "^2.51.1",
-    "rollup-plugin-babel": "^4.4.0",
-    "rollup-plugin-commonjs": "^10.1.0",
-    "rollup-plugin-node-resolve": "^5.2.0",
-    "rollup-plugin-string": "^3.0.0",
+    "eslint-plugin-vue": "^7.15.1",
+    "gridjs": "^5.0.2",
+    "prettier": "^2.3.2",
+    "rollup-plugin-external-globals": "^0.6.1",
+    "rollup-plugin-typescript2": "^0.30.0",
     "rollup-plugin-vue": "^6.0.0",
     "styl-injector": "^1.4.0",
-    "typescript": "^4.3.2",
+    "typescript": "^4.3.5",
     "uid": "^2.0.0",
-    "vue": "^2.6.11",
-    "vue-runtime-helpers": "1.1.2",
+    "vue": "^2.6.14",
     "vue-template-compiler": "^2.6.14"
   }
 }
