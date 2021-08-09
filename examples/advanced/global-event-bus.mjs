@@ -1,6 +1,6 @@
 import Emittery from 'https://cdn.skypack.dev/emittery'
 import faker from 'https://cdn.skypack.dev/faker'
-import { Grid } from '../../dist/index.esm.js'
+import { Grid } from '../../dist/main.esm.js'
 
 window.emitter = new Emittery()
 

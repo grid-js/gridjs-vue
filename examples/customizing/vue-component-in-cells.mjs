@@ -1,5 +1,5 @@
 import faker from 'https://cdn.skypack.dev/faker'
-import { Grid } from '../../dist/index.esm.js'
+import { Grid } from '../../dist/main.esm.js'
 import TestComponent from '../test-component.mjs'
 
 export default {

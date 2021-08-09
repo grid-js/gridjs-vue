@@ -1,30 +1,19 @@
-module.exports = {
-  jsCompiler: 'babel',
-  input: ['src/index.browser.mjs', 'src/index.mjs'],
+const config = {
+  input: 'build/main.js',
   bundleNodeModules: true,
+  externals: ['vue'],
   output: {
     format: ['cjs', 'esm', 'umd'],
     minify: true,
     moduleName: 'Grid',
-    extractCSS: false
+    extractCSS: false,
+    dir: 'dist/'
   },
   plugins: {
-    string: {
-      include: 'node_modules/**/*.css'
-    },
+    babel: false,
     vue: {
       target: 'browser'
-    },
-    babel: {
-      presets: ['vue', ['@babel/preset-env', { useBuiltIns: 'usage', corejs: 3 }]],
-      plugins: ['@babel/plugin-transform-runtime'],
-      babelHelpers: 'runtime',
-      configFile: false
-    },
-    'node-resolve': true
-  },
-  resolvePlugins: {
-    string: require('rollup-plugin-string').string
-  },
-  external: 'crypto'
+    }
+  }
 }
+export default config
