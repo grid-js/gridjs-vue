@@ -8,7 +8,7 @@ const onMounted = (component: GridVue) => {
     assignTheme(component)
     activatePlugins(component)
     resizeObserver(component)
-
+    component.$nextTick(() => component.$emit('ready'))
     return component
   } catch (error) {
     console.error(error)
