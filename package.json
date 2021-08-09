@@ -29,7 +29,7 @@
     "default": "./dist/main.esm.js"
   },
   "scripts": {
-    "build": "tsc; bili"
+    "build": "rm -rf dist; bili;"
   },
   "files": [
     "dist/*",
@@ -37,6 +37,7 @@
     "./attributes.json",
     "./tags.json"
   ],
+  "types": "./dist/src/main.ts",
   "vetur": {
     "tags": "tags.json",
     "attributes": "attributes.json"

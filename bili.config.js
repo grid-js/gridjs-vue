@@ -1,5 +1,5 @@
 const config = {
-  input: 'build/main.js',
+  input: 'src/main.ts',
   bundleNodeModules: true,
   externals: ['vue'],
   output: {
@@ -7,6 +7,7 @@ const config = {
     minify: true,
     moduleName: 'Grid',
     extractCSS: false,
+    sourceMap: true,
     dir: 'dist/'
   },
   plugins: {
