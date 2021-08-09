@@ -1,4 +1,4 @@
-import { Grid } from '../../dist/index.esm.js'
+import { Grid } from '../../dist/main.esm.js'
 
 export default {
   name: 'Events',
@@ -20,13 +20,15 @@ export default {
   },
   mounted() {
     this.$nextTick(() => {
-      this.$refs.myGrid.grid.on('rowClick', (...args) => {
-        console.log(`row: ${JSON.stringify(args)}`)
-      })
+      if (this.$refs.myGrid && this.$refs.myGrid.grid) {
+        this.$refs.myGrid.grid.on('rowClick', (...args) => {
+          console.log(`row: ${JSON.stringify(args)}`)
+        })
 
-      this.$refs.myGrid.grid.on('cellClick', (...args) => {
-        console.log(`cell: ${JSON.stringify(args)}`)
-      })
+        this.$refs.myGrid.grid.on('cellClick', (...args) => {
+          console.log(`cell: ${JSON.stringify(args)}`)
+        })
+      }
     })
   },
   template: `

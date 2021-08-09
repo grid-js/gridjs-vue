@@ -1,4 +1,4 @@
-import { Grid } from '../../dist/index.esm.js'
+import { Grid } from '../../dist/main.esm.js'
 
 export default {
   name: 'HelloWorld',
@@ -31,12 +31,7 @@ export default {
       ]
     }
   },
-  methods: {
-    log(text) {
-      console.log(text)
-    }
-  },
   template: `
-    <div><grid :columns="columns" :rows="rows" ref="helloWorld" @ready="log('Hi to you too!')"></grid></div>
+    <div><grid :columns="columns" :rows="rows" ref="helloWorld"></grid></div>
   `
 }

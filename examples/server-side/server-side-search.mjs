@@ -1,4 +1,4 @@
-import { Grid } from '../../dist/index.esm.js'
+import { Grid } from '../../dist/main.esm.js'
 
 export default {
   name: 'ServerSideSearch',

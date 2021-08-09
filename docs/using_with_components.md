@@ -10,7 +10,7 @@ directly into a table cell or row.
 
 <script>
   import faker from 'https://cdn.skypack.dev/faker'
-  import { Grid } from '../../dist/index.esm.js'
+  import { Grid } from '../../dist/main.esm.js'
   import TestComponent from '../test-component.mjs'
 
   export default {
@@ -57,7 +57,7 @@ passing `methods` to `$gridjs.helper()` containing your event handler, just as y
 
 <script>
   import faker from 'https://cdn.skypack.dev/faker'
-  import { Grid } from '../../dist/index.esm.js'
+  import { Grid } from '../../dist/main.esm.js'
   import TestComponent from '../test-component.mjs'
 
   export default {
@@ -106,7 +106,7 @@ communicate back with the main Vue application unless using a separate global ev
 ```js
 import Emittery from 'https://cdn.skypack.dev/emittery'
 import faker from 'https://cdn.skypack.dev/faker'
-import { Grid } from '../../dist/index.esm.js'
+import { Grid } from '../../dist/main.esm.js'
 
 window.emitter = new Emittery()
 

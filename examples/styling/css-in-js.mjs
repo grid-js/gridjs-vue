@@ -1,5 +1,5 @@
 import { css } from 'https://cdn.skypack.dev/@emotion/css'
-import { Grid } from '../../dist/index.esm.js'
+import { Grid } from '../../dist/main.esm.js'
 
 export default {
   name: 'CssStyle',

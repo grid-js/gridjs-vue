@@ -1,5 +1,5 @@
 import VueChartist from 'https://cdn.skypack.dev/v-chartist'
-import { Grid } from '../../dist/index.esm.js'
+import { Grid } from '../../dist/main.esm.js'
 
 export default {
   name: 'StockMarket',
