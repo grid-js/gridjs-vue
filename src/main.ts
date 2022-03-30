@@ -1,5 +1,6 @@
 import Grid from './gridjs-vue'
 import install from './lib/install'
+import Vue from 'vue'
 
 const plugin = {
   install: install
