@@ -9,10 +9,12 @@
     "Afshin Mehrabani <afshin.meh@gmail.com>"
   ],
   "homepage": "https://gridjs.io/",
-  "bugs": "https://github.com/grid-js/gridjs-vue/issues",
+  "bugs": {
+    "url": "https://github.com/grid-js/gridjs-vue/issues"
+  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/grid-js/gridjs-vue.git"
+    "url": "git+https://github.com/grid-js/gridjs-vue.git"
   },
   "keywords": [
     "table",
@@ -66,5 +68,10 @@
     "uid": "^2.0.0",
     "vue": "^2.6.14",
     "vue-template-compiler": "^2.6.14"
-  }
+  },
+  "directories": {
+    "doc": "docs",
+    "example": "examples"
+  },
+  "author": ""
 }
