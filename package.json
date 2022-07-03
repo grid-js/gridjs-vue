@@ -72,5 +72,8 @@
   "directories": {
     "doc": "docs",
     "example": "examples"
+  },
+  "publishConfig": {
+    "@QDenka:registry": "https://npm.pkg.github.com"
   }
 }
