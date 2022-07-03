@@ -72,6 +72,5 @@
   "directories": {
     "doc": "docs",
     "example": "examples"
-  },
-  "author": ""
+  }
 }
